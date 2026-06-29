@@ -1029,6 +1029,22 @@ footer {
 }
 .footer-bottom a:hover { color: var(--gold); }
 
+.legal-page {
+  min-height: 100vh;
+  padding: 8rem 0;
+  background: var(--black);
+}
+
+.legal-page p {
+  color: var(--white-dim);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.legal-page a {
+  color: var(--gold-bright);
+}
+
 /* ============================================
    MOBILE
    ============================================ */
