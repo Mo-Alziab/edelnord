@@ -1072,3 +1072,170 @@ footer {
   body { cursor: auto; }
   .cursor, .cursor-ring { display: none; }
 }
+/* ============================================
+   RESPONSIVE FIX — HANDY & TABLET
+   ============================================ */
+
+@media (max-width: 900px) {
+
+  html, body {
+    overflow-x: hidden;
+  }
+
+  nav {
+    padding: 1rem 1.2rem;
+  }
+
+  .nav-logo-img {
+    width: 38px;
+    height: 38px;
+  }
+
+  .nav-logo span:first-child {
+    font-size: 1.25rem;
+  }
+
+  .hero {
+    min-height: 100vh;
+    padding: 7rem 1.2rem 5rem;
+  }
+
+  .hero-content {
+    max-width: 100%;
+  }
+
+  .hero-tag {
+    font-size: 0.55rem;
+    letter-spacing: 0.25em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.8rem, 15vw, 4.5rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-logo img {
+    width: 85%;
+    max-width: 360px;
+  }
+
+  .hero-actions {
+    margin-top: 0.8rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 0.9rem 1.6rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.18em;
+  }
+
+  .hero-scroll {
+    bottom: 1.2rem;
+  }
+
+  .scroll-line {
+    height: 35px;
+  }
+
+  .services,
+  .why,
+  .impressions,
+  .offers,
+  .about,
+  .contact {
+    padding: 5rem 0;
+  }
+
+  .section-inner {
+    padding: 0 1.2rem;
+  }
+
+  .section-title,
+  .about-title,
+  .contact-title {
+    font-size: clamp(2.2rem, 11vw, 3.4rem);
+  }
+
+  .services-grid,
+  .offers-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .service-card {
+    padding: 2.5rem 1.8rem;
+  }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+
+  .gallery-item {
+    height: 240px;
+  }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-body {
+    text-align: center;
+  }
+
+  .about-image img {
+    height: 340px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-alt {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  footer {
+    padding: 3rem 1.2rem 2rem;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-brand p {
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .hero-logo img {
+    width: 92%;
+    max-width: 300px;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-tag {
+    letter-spacing: 0.18em;
+  }
+
+  .about-image img {
+    height: 260px;
+  }
+
+  .service-card,
+  .offer-pill {
+    padding: 2rem 1.4rem;
+  }
+}
