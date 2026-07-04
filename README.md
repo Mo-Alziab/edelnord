@@ -60,3 +60,4 @@ Ersetzen Sie die Platzhalter in `index.html` (`.gallery-placeholder`) mit echten
 - [ ] Kontakt-Daten (Telefon, E-Mail) aktualisieren
 - [ ] Formular-Backend anbinden (z.B. Formspree, Netlify Forms)
 - [ ] Domain + Hosting einrichten
+.
