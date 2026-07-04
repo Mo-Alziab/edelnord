@@ -1255,3 +1255,7 @@ footer {
     padding: 2rem 1.4rem;
   }
 }
+.service-card {
+    text-decoration: none;
+    color: inherit;
+}

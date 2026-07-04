@@ -1,0 +1,143 @@
+.buffet-page {
+  min-height: 100vh;
+  height: 100vh;
+  padding: 6.5rem 0 2rem;
+  background: var(--black);
+  overflow: hidden;
+}
+
+.buffet-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.buffet-header .section-title {
+  margin-bottom: 0;
+}
+
+.buffet-tabs {
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+  gap: .6rem;
+  margin-bottom: 1.5rem;
+}
+
+.buffet-tab {
+  background: var(--black-card);
+  border: 1px solid rgba(201,148,58,.25);
+  color: var(--white-dim);
+  padding: .7rem .9rem;
+  font-family: var(--font-ui);
+  font-size: .58rem;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.buffet-tab.active,
+.buffet-tab:hover {
+  color: var(--black);
+  background: linear-gradient(135deg, var(--gold-deep), var(--gold-bright));
+  box-shadow: 0 0 24px rgba(201,148,58,.25);
+}
+
+.buffet-layout {
+  display: grid;
+  grid-template-columns: 1.1fr .9fr;
+  gap: 2rem;
+  align-items: stretch;
+  height: calc(100vh - 260px);
+}
+
+.buffet-info {
+  background: var(--black-card);
+  padding: 1.8rem;
+  border: 1px solid rgba(201,148,58,.18);
+  overflow-y: auto;
+}
+
+.buffet-info h2 {
+  font-family: var(--font-display);
+  font-size: 2.4rem;
+  font-weight: 300;
+  color: var(--gold-bright);
+  margin-bottom: 1rem;
+}
+
+.buffet-section {
+  margin-bottom: 1.1rem;
+}
+
+.buffet-section h3 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 300;
+  color: var(--white);
+  margin-bottom: .4rem;
+}
+
+.buffet-section ul {
+  padding-left: 1.2rem;
+}
+
+.buffet-section li {
+  color: var(--white-dim);
+  line-height: 1.55;
+  font-size: .75rem;
+}
+
+.buffet-gallery {
+  height: 100%;
+}
+
+.buffet-gallery img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 1px solid rgba(201,148,58,.25);
+  box-shadow: 0 30px 60px rgba(0,0,0,.45);
+}
+
+/* Phone */
+@media (max-width: 900px) {
+  .buffet-page {
+    height: auto;
+    min-height: 100vh;
+    padding: 6rem 0 3rem;
+    overflow: visible;
+  }
+
+  .buffet-tabs {
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding-bottom: .5rem;
+  }
+
+  .buffet-tab {
+    flex: 0 0 auto;
+    white-space: nowrap;
+  }
+
+  .buffet-layout {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 1.5rem;
+  }
+
+  .buffet-info {
+    padding: 1.5rem;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .buffet-info h2 {
+    font-size: 2rem;
+  }
+
+  .buffet-gallery img {
+    height: 280px;
+  }
+}

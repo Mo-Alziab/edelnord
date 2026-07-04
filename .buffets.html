@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Edelnord Catering Buffets – Menüauswahl ohne Preise." />
+  <title>Buffets — Edelnord Catering</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/buffets.css" />
+</head>
+<body>
+
+  <nav>
+    <a href="index.html#home" class="nav-logo">
+      <img src="assets/logo.jpg" alt="Edelnord Logo" class="nav-logo-img" />
+      <div class="nav-logo-text gold-text">
+        <span>EDELNORD</span>
+        <span>Catering</span>
+      </div>
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html#leistungen">Leistungen</a></li>
+      <li><a href="index.html#angebote">Mittagstisch</a></li>
+      <li><a href="index.html#ueber">Über uns</a></li>
+      <li><a href="index.html#kontakt" class="nav-cta">Anfrage stellen</a></li>
+    </ul>
+
+    <button class="hamburger" aria-label="Menü öffnen">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="buffet-page">
+    <section class="buffet-hero">
+      <div class="section-inner buffet-hero-inner">
+        <span class="section-label">Unsere Buffets</span>
+        <h1 class="buffet-title">Buffet Auswahl<br><em>Genuss vor Ort</em></h1>
+        <p class="buffet-intro">
+          Wählen Sie eines unserer Buffetkonzepte. Alle Buffets können individuell an Ihre Veranstaltung angepasst werden.
+        </p>
+      </div>
+    </section>
+
+    <section class="buffet-section">
+      <div class="section-inner">
+
+        <div class="buffet-tabs" role="tablist" aria-label="Buffet Auswahl">
+          <button class="buffet-tab active" data-buffet="1" type="button">Buffet 1</button>
+          <button class="buffet-tab" data-buffet="2" type="button">Buffet 2</button>
+          <button class="buffet-tab" data-buffet="3" type="button">Buffet 3</button>
+          <button class="buffet-tab" data-buffet="4" type="button">Buffet 4</button>
+          <button class="buffet-tab" data-buffet="5" type="button">Buffet 5</button>
+          <button class="buffet-tab" data-buffet="6" type="button">Buffet 6</button>
+          <button class="buffet-tab" data-buffet="7" type="button">Buffet 7</button>
+        </div>
+
+        <div class="buffet-layout">
+          <div class="buffet-card">
+            <div class="buffet-headline">
+              <span class="buffet-small">Edelnord Catering</span>
+              <h2 id="buffetName">Buffet 1</h2>
+              <div class="buffet-divider"><span></span>✦<span></span></div>
+            </div>
+
+            <div id="buffetContent" class="buffet-content"></div>
+
+            <a id="buffetRequest" href="index.html#kontakt" class="btn-primary buffet-button">Dieses Buffet anfragen</a>
+          </div>
+
+          <aside class="buffet-gallery" aria-label="Buffet Impressionen">
+            <div class="gallery-frame">
+              <img id="buffetSlide" src="assets/buffet-gallery-1.jpg" alt="Buffet Impression" />
+              <div class="gallery-overlay">
+                <span>Impressionen</span>
+                <strong>EDELNORD</strong>
+              </div>
+            </div>
+
+            <div class="gallery-dots" aria-hidden="true">
+              <span class="dot active"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Edelnord Catering · Alle Rechte vorbehalten</p>
+      <div style="display:flex; gap:2rem;">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/buffets.js"></script>
+</body>
+</html>
