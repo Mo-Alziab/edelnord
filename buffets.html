@@ -4,18 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Buffets – Edelnord Catering</title>
+
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/buffets.css" />
 </head>
-<body>
-  <section class="buffet-page">
-  <div class="section-inner">
 
-    <div class="buffet-header">
-      <span class="section-label">EdelNord Catering</span>
-      <h1 class="section-title">
-        Unsere <em class="gold-text">Buffets</em>
-      </h1>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
+
+  <section class="buffet-page">
+    <div class="buffet-logo">
+      <img src="assets/Slogan.PNG" alt="Edelnord Catering">
     </div>
 
     <div class="buffet-tabs">
@@ -28,98 +28,24 @@
       <button class="buffet-tab" data-buffet="6">Buffet 7</button>
     </div>
 
-    <div class="buffet-layout">
-      <div class="buffet-info">
-        <h2 id="buffet-title">Buffet 1</h2>
-        <div id="buffet-content"></div>
-      </div>
+       <main class="buffet-stage">
+      <aside class="buffet-side">
+        <div class="side-album">
+          <img id="side-album-image" src="assets/album1.jpg" alt="Edelnord Buffet Foto">
+        </div>
+      </aside>
 
-      <div class="buffet-gallery">
-        <img id="buffet-image" src="assets/buffet-gallery-1.jpg" alt="Buffet Galerie">
-      </div>
-    </div>
+      <section class="menu-card">
+        <div class="buffet-image-box">
+          <img id="buffet-image" src="assets/buffet1.jpg" alt="Buffet 1">
+        </div>
+      </section>
+    </main>
 
-  </div>
-</section>
-
-<script src="js/buffets.js"></script>
- <!--
-  <nav>
-    <a href="index.html#home" class="nav-logo">
-      <img src="assets/logo.jpg" alt="Edelnord Logo" class="nav-logo-img" />
-      <div class="nav-logo-text gold-text">
-        <span>EDELNORD</span>
-        <span>Catering</span>
-      </div>
-    </a>
-
-    <ul class="nav-links">
-      <li><a href="index.html#leistungen">Leistungen</a></li>
-      <li><a href="index.html#angebote">Mittagstisch</a></li>
-      <li><a href="index.html#ueber">Über uns</a></li>
-      <li><a href="index.html#kontakt" class="nav-cta">Anfrage stellen</a></li>
-    </ul>
-
-    <button class="hamburger" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
-    </button>
-  </nav>
-
-  <main class="buffet-page">
-    <section class="buffet-hero">
-      <span class="section-label">EdelNord Catering</span>
-      <h1 class="buffet-title">Unsere <em>Buffets</em></h1>
-      <p class="buffet-intro">
-        Wählen Sie eines unserer Buffetkonzepte. Alle Buffets können individuell angepasst werden –
-        auch vegetarisch, vegan oder nach besonderen Wünschen.
-      </p>
-    </section>
-
-    <section class="buffet-tabs-section">
-      <div class="buffet-tabs" role="tablist" aria-label="Buffet Auswahl">
-        <button class="buffet-tab active" data-buffet="1">Buffet 1</button>
-        <button class="buffet-tab" data-buffet="2">Buffet 2</button>
-        <button class="buffet-tab" data-buffet="3">Buffet 3</button>
-        <button class="buffet-tab" data-buffet="4">Buffet 4</button>
-        <button class="buffet-tab" data-buffet="5">Buffet 5</button>
-        <button class="buffet-tab" data-buffet="6">Buffet 6</button>
-        <button class="buffet-tab" data-buffet="7">Buffet 7</button>
-      </div>
-
-      <div class="buffet-layout">
-        <article class="buffet-menu-card">
-          <div class="menu-card-header">
-            <span class="gold-kicker">Genuss vor Ort</span>
-            <h2 id="buffetName">Buffet 1</h2>
-            <div class="menu-divider"><span></span><b>✦</b><span></span></div>
-          </div>
-          <div id="buffetMenu" class="buffet-menu"></div>
-        </article>
-
-        <aside class="buffet-gallery-card">
-          <div class="gallery-frame">
-            <img id="galleryImage" src="assets/buffet-gallery-1.jpg" alt="EdelNord Buffet Impression" />
-            <div class="gallery-overlay">
-              <span>Buffet Impressionen</span>
-              <strong>EDELNORD CATERING</strong>
-            </div>
-          </div>
-          <div class="gallery-dots" id="galleryDots">
-            <button class="active" data-img="0" aria-label="Bild 1"></button>
-            <button data-img="1" aria-label="Bild 2"></button>
-            <button data-img="2" aria-label="Bild 3"></button>
-            <button data-img="3" aria-label="Bild 4"></button>
-          </div>
-          <a href="index.html#kontakt" class="btn-primary buffet-request">Buffet anfragen</a>
-        </aside>
-      </div>
-    </section>
-  </main>
+    <p class="buffet-hint">Wählen Sie ein anderes Buffet, um die Auswahl zu sehen.</p>
+  </section>
 
   <script src="js/main.js"></script>
   <script src="js/buffets.js"></script>
--->
-
-
 </body>
 </html>
