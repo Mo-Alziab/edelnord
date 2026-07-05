@@ -33,7 +33,9 @@
 
 .buffet-sidebar {
   border-right: 1px solid rgba(201,148,58,.35);
-  padding: 1.3rem 3rem 10rem;
+  padding: 3rem;
+  padding-top: .5rem;
+padding-bottom: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
@@ -123,17 +125,20 @@
 
 .menu-area {
   height: 100%;
-  padding: 4.2rem 1.5rem 1.3rem;
+  padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .menu-area img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transition: opacity .35s ease;
+   max-width: 100%;
+    max-height: calc(100vh - 80px);
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+    margin: auto;
 }
 
 /* Handy */
