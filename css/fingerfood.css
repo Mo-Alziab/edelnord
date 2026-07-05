@@ -61,31 +61,37 @@
 
 
 .fingerfood-cta {
-  position: absolute;
-  left: 50%;
-  bottom: 18px;
-  transform: translateX(-50%);
-  z-index: 100;
+    position:absolute;
 
-  padding: 8px 16px;      /* smaller */
-  background: linear-gradient(
-      135deg,
-      var(--gold-deep),
-      var(--gold-bright),
-      var(--gold-deep)
-  );
+top:660px;
+right:20px;
 
-  color: var(--black);
-  text-decoration: none;
-  text-transform: uppercase;
+padding:10px 22px;
 
-  font-size: .52rem;      /* smaller text */
-  font-weight: 800;
-  letter-spacing: .15em;
+background:linear-gradient(
+135deg,
+var(--gold-deep),
+var(--gold-bright),
+var(--gold-deep));
 
-  border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(201,148,58,.35);
-  transition: .3s;
+color:black;
+
+font-size:.55rem;
+font-weight:700;
+
+letter-spacing:.18em;
+
+text-decoration:none;
+
+text-transform:uppercase;
+
+border-radius:10px;
+
+box-shadow:0 10px 25px rgba(201,148,58,.35);
+
+transition:.35s;
+
+z-index:50;
 }
 
 .fingerfood-cta:hover {

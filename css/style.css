@@ -192,11 +192,12 @@ nav.scrolled {
    HERO
    ============================================ */
 .hero {
-     display: flex;
+    display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-
+    min-height: 70vh;
+    padding-top: 5rem;
+    padding-bottom: 2rem;
 }
 .hero-bg {
   position: absolute;
@@ -249,12 +250,12 @@ nav.scrolled {
     margin: 20px 0;
 }
 .hero-logo img {
-       width: 600px;
+    width: 500px;
+    max-width: 60%;
     height: auto;
-    display: block;
 }
 .hero-actions {
-    margin-top: 20px;
+    margin-top: 5px;
 }
 .hero-tag {
   font-family: var(--font-ui);
@@ -347,7 +348,7 @@ nav.scrolled {
 }
 .hero-scroll {
      position: absolute;
-    bottom: 2.5rem;
+    bottom: 2rem;
 
     left: 50%;
     transform: translateX(-50%);
@@ -383,7 +384,7 @@ nav.scrolled {
    SECTION BASE
    ============================================ */
 section { position: relative; z-index: 2; }
-.section-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
+.section-inner { width: 100%; max-width: 1300px; margin: 0 auto; padding: 0 3rem; }
 .section-label {
   font-size: 0.6rem;
   font-weight: 400;
@@ -395,16 +396,16 @@ section { position: relative; z-index: 2; }
 }
 .section-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 300;
-  line-height: 1.05;
+  line-height: 1.08;
   margin-bottom: 1.5rem;
 }
 .divider {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .divider-line {
   height: 1px;
@@ -448,21 +449,24 @@ section { position: relative; z-index: 2; }
    SERVICES
    ============================================ */
 .services {
-  padding: 10rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
   background: var(--black-mid);
   border-top: 1px solid rgba(201,148,58,0.08);
   border-bottom: 1px solid rgba(201,148,58,0.08);
 }
-.services-header { text-align: center; margin-bottom: 5rem; }
+.services-header { text-align: center; margin-bottom: 1.4rem; }
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
 }
 .service-card {
   position: relative;
   background: var(--black-card);
-  padding: 3.5rem 2.5rem;
+  padding: 2rem 1.6rem;
   overflow: hidden;
   transition: var(--transition);
   cursor: none;
@@ -480,30 +484,30 @@ section { position: relative; z-index: 2; }
 .service-card:hover { background: rgba(20,20,20,0.95); }
 .service-card:hover .service-icon { color: var(--gold-bright); }
 .service-icon {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--gold);
-  margin-bottom: 1.8rem;
+  margin-bottom: 1rem;
   display: block;
   transition: color var(--transition);
 }
 .service-name {
   font-family: var(--font-display);
-  font-size: 1.7rem;
+  font-size: 1.5rem;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-bottom: .8rem;
   color: var(--white);
 }
 .service-desc {
   font-size: 0.78rem;
   font-weight: 300;
-  line-height: 1.85;
+  line-height: 1.7;
   color: var(--white-dim);
 }
 .service-number {
   position: absolute;
   bottom: 2rem; right: 2rem;
   font-family: var(--font-display);
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 300;
   color: rgba(201,148,58,0.06);
   line-height: 1;
@@ -514,7 +518,10 @@ section { position: relative; z-index: 2; }
    WHY US
    ============================================ */
 .why {
-  padding: 10rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
   background: var(--black);
 }
 .why-layout {
@@ -531,12 +538,12 @@ section { position: relative; z-index: 2; }
   line-height: 2;
   color: var(--white-dim);
   max-width: 480px;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .why-pillars {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
+  gap: 1rem;
 }
 .pillar {
   display: flex;
@@ -618,7 +625,10 @@ section { position: relative; z-index: 2; }
    IMPRESSIONS / GALLERY
    ============================================ */
 .impressions {
-  padding: 10rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
   background: var(--black-mid);
   border-top: 1px solid rgba(201,148,58,0.08);
 }
@@ -679,20 +689,23 @@ section { position: relative; z-index: 2; }
    ANGEBOTE (OFFERS)
    ============================================ */
 .offers {
-  padding: 10rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
   background: var(--black);
 }
-.offers-header { text-align: center; margin-bottom: 5rem; }
+.offers-header { text-align: center; margin-bottom: 2.5rem; }
 .offers-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.5px;
-  margin-bottom: 4rem;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 2.5rem;
 }
 .offer-pill {
   background: var(--black-card);
   border: 1px solid rgba(201,148,58,0.1);
-  padding: 2.5rem 2rem;
+  padding: 1.8rem 1.2rem;
   text-align: center;
   transition: var(--transition);
   position: relative;
@@ -714,7 +727,7 @@ section { position: relative; z-index: 2; }
 .offer-icon { font-size: 1.8rem; margin-bottom: 1rem; display: block; }
 .offer-name {
   font-family: var(--font-display);
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 300;
   color: var(--white);
 }
@@ -731,15 +744,18 @@ section { position: relative; z-index: 2; }
    ABOUT
    ============================================ */
 .about {
-  padding: 10rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
   background: var(--black-soft);
   border-top: 1px solid rgba(201,148,58,0.08);
   border-bottom: 1px solid rgba(201,148,58,0.08);
 }
 .about-layout {
     display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 5rem;
+    grid-template-columns: 1.1fr .9fr;
+    gap: 3rem;
     align-items: center;
 }
 .about-body {
@@ -747,7 +763,7 @@ section { position: relative; z-index: 2; }
 }
 .about-image img {
     width: 100%;
-    height: 520px;
+    height: 420px;
     object-fit: cover;
     border-radius: 18px;
     border: 1px solid rgba(212,175,55,.25);
@@ -761,7 +777,7 @@ section { position: relative; z-index: 2; }
 .about-tag { margin-bottom: 1.5rem; }
 .about-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-size: clamp(2rem, 4vw, 3.3rem);
   font-weight: 300;
   line-height: 1.1;
   margin-bottom: 2.5rem;
@@ -769,9 +785,9 @@ section { position: relative; z-index: 2; }
 .about-body p {
   font-size: 0.82rem;
   font-weight: 300;
-  line-height: 2;
+  line-height: 1.8;
   color: var(--white-dim);
-  margin-bottom: 1.2rem;
+  margin-bottom: .9rem;
 }
 .about-visual {
   position: relative;
@@ -843,11 +859,14 @@ section { position: relative; z-index: 2; }
    CONTACT
    ============================================ */
 .contact {
-  padding: 10rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 4rem 0;
   background: var(--black);
   text-align: center;
 }
-.contact-inner { max-width: 680px; margin: 0 auto; padding: 0 2rem; }
+.contact-inner { width: 100%; max-width: 900px; margin: 0 auto; padding: 0 2rem; }
 .contact-pretitle {
   font-size: 0.6rem;
   letter-spacing: 0.45em;
@@ -858,7 +877,7 @@ section { position: relative; z-index: 2; }
 }
 .contact-title {
   font-family: var(--font-display);
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: clamp(2rem, 4vw, 3.3rem);
   font-weight: 300;
   line-height: 1.1;
   margin-bottom: 2rem;
@@ -868,14 +887,14 @@ section { position: relative; z-index: 2; }
   font-weight: 300;
   line-height: 2;
   color: var(--white-dim);
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   text-align: left;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .form-row {
   display: grid;
@@ -899,7 +918,7 @@ section { position: relative; z-index: 2; }
   background: var(--black-card);
   border: 1px solid rgba(201,148,58,0.15);
   color: var(--white);
-  padding: 0.9rem 1rem;
+  padding: .8rem 1rem;
   font-family: var(--font-ui);
   font-size: 0.8rem;
   font-weight: 300;
@@ -912,7 +931,7 @@ section { position: relative; z-index: 2; }
 .form-field select:focus {
   border-color: var(--gold);
 }
-.form-field textarea { height: 140px; resize: vertical; }
+.form-field textarea { height: 110px; resize: vertical; }
 .form-field select option { background: var(--black-card); }
 .form-submit {
   width: 100%;
@@ -1258,4 +1277,60 @@ footer {
 .service-card {
     text-decoration: none;
     color: inherit;
+}
+
+/* ============================================
+   COMPACT SECTION OVERRIDES — Hauptseite
+   ============================================ */
+@media (min-width: 901px) {
+  .services,
+  .offers,
+  .about,
+  .contact {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  .services-grid,
+  .offers-cards {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+  }
+
+  .services-header,
+  .offers-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .section-title,
+  .about-title,
+  .contact-title {
+    font-size: clamp(2rem, 4vw, 3.3rem);
+  }
+
+  .service-card {
+    padding: 2rem 1.6rem;
+    min-height: 320px;
+  }
+
+  .offer-pill {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .about-layout {
+    grid-template-columns: 1.1fr .9fr;
+    gap: 3rem;
+  }
+
+  .about-image img {
+    height: 420px;
+  }
+
+  .contact-form {
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
 }

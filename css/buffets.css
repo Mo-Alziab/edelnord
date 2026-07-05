@@ -49,8 +49,8 @@ padding-bottom: 2rem;
 }
 
 .buffet-logo img {
- max-width: 250px;
-    max-height: 150px;
+ max-width: 300px;
+    max-height: 300px;
     width: 150%;
     object-fit: contain;
 }
