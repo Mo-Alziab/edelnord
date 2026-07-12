@@ -710,6 +710,12 @@ section { position: relative; z-index: 2; }
   transition: var(--transition);
   position: relative;
   overflow: hidden;
+
+   /* Neu */
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
 }
 .offer-pill::before {
   content: '';
