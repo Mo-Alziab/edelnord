@@ -195,7 +195,7 @@ nav.scrolled {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 70vh;
+      min-height: 100vh;
     padding-top: 5rem;
     padding-bottom: 2rem;
 }
@@ -250,9 +250,8 @@ nav.scrolled {
     margin: 20px 0;
 }
 .hero-logo img {
-    width: 500px;
-    max-width: 60%;
-    height: auto;
+    width: 95%;
+    max-width: 430px;
 }
 .hero-actions {
     margin-top: 5px;
@@ -468,8 +467,9 @@ section { position: relative; z-index: 2; }
   background: var(--black-card);
   padding: 2rem 1.6rem;
   overflow: hidden;
-  transition: var(--transition);
+ transition: .35s ease;
   cursor: none;
+  border-radius: 14px;
 }
 .service-card::before {
   content: '';
@@ -481,7 +481,7 @@ section { position: relative; z-index: 2; }
   transition: var(--transition);
 }
 .service-card:hover::before { transform: scaleX(1); }
-.service-card:hover { background: rgba(20,20,20,0.95); }
+.service-card:hover { background: rgba(20,20,20,0.95); transform: translateY(-10px); }
 .service-card:hover .service-icon { color: var(--gold-bright); }
 .service-icon {
   font-size: 1.8rem;
@@ -1137,13 +1137,19 @@ footer {
   }
 
   .hero {
-    min-height: 100vh;
-    padding: 7rem 1.2rem 5rem;
-  }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
 
-  .hero-content {
-    max-width: 100%;
-  }
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
   .hero-tag {
     font-size: 0.55rem;
@@ -1161,10 +1167,9 @@ footer {
     max-width: 360px;
   }
 
-  .hero-actions {
-    margin-top: 0.8rem;
-  }
-
+.hero-actions {
+    order: 1;
+}
   .btn-primary,
   .btn-secondary {
     padding: 0.9rem 1.6rem;
@@ -1172,9 +1177,13 @@ footer {
     letter-spacing: 0.18em;
   }
 
-  .hero-scroll {
-    bottom: 1.2rem;
-  }
+ .hero-scroll {
+    position: static;      /* nicht mehr absolut */
+    transform: none;
+    margin-top: 1.5rem;    /* Abstand zum Button */
+    order: 3;
+}
+
 
   .scroll-line {
     height: 35px;
@@ -1339,4 +1348,315 @@ footer {
     gap: 1rem;
     margin-bottom: 2rem;
   }
+}
+/* ============================================
+   MOBILE NAVIGATION
+   Kleiner Anfrage-Button + Hamburger oben
+   ============================================ */
+
+.mobile-nav-actions {
+  display: none;
+}
+
+/* Hamburger-Grunddesign */
+.hamburger {
+  display: none;
+  width: 38px;
+  height: 38px;
+  padding: 8px;
+  border: 1px solid rgba(201, 148, 58, 0.35);
+  background: rgba(8, 8, 8, 0.85);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  cursor: pointer;
+  position: relative;
+  z-index: 103;
+}
+
+.hamburger span {
+  display: block;
+  width: 20px;
+  height: 1px;
+  background: var(--gold-bright);
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Hamburger wird zu einem X */
+.hamburger.active span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* ============================================
+   HANDY UND TABLET
+   ============================================ */
+
+@media (max-width: 900px) {
+  nav {
+    min-height: 68px;
+    padding: 0.7rem 1rem;
+    background: rgba(8, 8, 8, 0.97);
+    backdrop-filter: blur(12px);
+  }
+
+  .nav-logo {
+    gap: 0.45rem;
+    min-width: 0;
+  }
+
+  .nav-logo-img {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  .nav-logo-text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .nav-logo span:first-child {
+    font-size: 1.05rem;
+    line-height: 1;
+  }
+
+  .nav-logo span:last-child {
+    font-size: 0.45rem;
+    letter-spacing: 0.25em;
+    margin-top: 3px;
+  }
+
+  /* Desktop-Anfrage-Button ausblenden */
+  .desktop-cta {
+    display: none !important;
+  }
+
+  /* Rechte Seite: Anfrage und Hamburger */
+  .mobile-nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    z-index: 103;
+  }
+
+  .mobile-request-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 36px;
+    padding: 0.55rem 0.75rem;
+    background: linear-gradient(
+      135deg,
+      var(--gold-deep),
+      var(--gold-bright)
+    );
+    color: var(--black);
+    font-family: var(--font-ui);
+    font-size: 0.5rem;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: 0 4px 15px rgba(201, 148, 58, 0.2);
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Menü im geschlossenen Zustand */
+  .nav-links {
+    display: none;
+  }
+
+  /* Kompaktes geöffnetes Menü */
+  .nav-links.open {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: auto;
+    bottom: auto;
+
+    width: min(280px, calc(100vw - 2rem));
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+
+    padding: 1rem;
+    margin: 0;
+    gap: 0;
+
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+
+    background: rgba(8, 8, 8, 0.98);
+    border: 1px solid rgba(201, 148, 58, 0.25);
+    border-top: 1px solid rgba(201, 148, 58, 0.4);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(14px);
+
+    z-index: 102;
+  }
+
+  .nav-links.open li {
+    width: 100%;
+  }
+
+  .nav-links.open li + li {
+    border-top: 1px solid rgba(201, 148, 58, 0.12);
+  }
+
+  .nav-links.open a:not(.nav-cta) {
+    display: block;
+    width: 100%;
+    padding: 1rem 0.7rem;
+
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-align: left;
+    color: var(--white);
+  }
+
+  .nav-links.open a:not(.nav-cta)::after {
+    display: none;
+  }
+}
+
+/* ============================================
+   SEHR KLEINE HANDYS
+   ============================================ */
+
+@media (max-width: 430px) {
+  nav {
+    padding: 0.65rem 0.7rem;
+  }
+
+  .nav-logo-img {
+    width: 31px;
+    height: 31px;
+  }
+
+  .nav-logo span:first-child {
+    font-size: 0.9rem;
+  }
+
+  .nav-logo span:last-child {
+    font-size: 0.4rem;
+    letter-spacing: 0.18em;
+  }
+
+  .mobile-nav-actions {
+    gap: 0.35rem;
+  }
+
+  .mobile-request-btn {
+    min-height: 34px;
+    padding: 0.45rem 0.55rem;
+    font-size: 0.43rem;
+    letter-spacing: 0.07em;
+  }
+
+  .hamburger {
+    width: 35px;
+    height: 35px;
+    padding: 7px;
+  }
+
+  .hamburger span {
+    width: 18px;
+  }
+
+  .nav-links.open {
+    right: 0;
+    width: min(250px, calc(100vw - 1.4rem));
+  }
+}
+
+/* Bei besonders schmalen Geräten Logo-Text verkleinern */
+@media (max-width: 360px) {
+  .nav-logo span:first-child {
+    font-size: 0.78rem;
+  }
+
+  .nav-logo span:last-child {
+    display: none;
+  }
+
+  .mobile-request-btn {
+    padding-inline: 0.45rem;
+    font-size: 0.4rem;
+  }
+}
+
+.form-status {
+  min-height: 1.4rem;
+  margin-top: 0.3rem;
+  font-family: var(--font-ui);
+  font-size: 0.72rem;
+  line-height: 1.6;
+  text-align: center;
+  color: var(--white-dim);
+}
+
+.form-status.success {
+  color: #75c978;
+}
+
+.form-status.error {
+  color: #ef7777;
+}
+
+.form-submit:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+@media (max-width: 900px) {
+
+  .hero-content{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .hero-logo{
+    order:1;
+  }
+
+  .hero-scroll{
+    position:static;
+    left:auto;
+    bottom:auto;
+    transform:none;
+    order:2;
+    margin:1rem 0 1.2rem;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .hero-actions{
+    order:3;
+    margin-top:0;
+  }
+
+  .scroll-line{
+    height:30px;
+  }
+
 }

@@ -18,27 +18,48 @@
   <!-- ══════════════════════════════════════
        NAVIGATION
   ══════════════════════════════════════ -->
-  <nav>
- <a href="#home" class="nav-logo">
-  <img src="assets/logo.jpg" alt="Edelnord Logo" class="nav-logo-img" />
-  <div class="nav-logo-text gold-text">
-    <span>EDELNORD</span>
-    <span>Catering</span>
-  </div>
-</a>
-    <ul class="nav-links">
-      <li><a href="#leistungen">Leistungen</a></li>
-      <li><a href="#angebote">Mittagstisch</a></li>
-      <li><a href="#ueber">Über uns</a></li>
-  
-      <!--<li><a href="#impressionen">Impressionen</a></li>
-       <li><a href="#angebote">Angebote</a></li> -->
-      <li><a href="#kontakt" class="nav-cta">Anfrage stellen</a></li>
-    </ul>
-    <button class="hamburger" aria-label="Menü öffnen">
-      <span></span><span></span><span></span>
+<nav>
+  <a href="#home" class="nav-logo">
+    <img
+      src="assets/logo.jpg"
+      alt="EdelNord Catering Logo"
+      class="nav-logo-img"
+    >
+
+    <div class="nav-logo-text gold-text">
+      <span>EDELNORD</span>
+      <span>Catering</span>
+    </div>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="#leistungen">Leistungen</a></li>
+    <li><a href="#angebote">Mittagstisch</a></li>
+    <li><a href="#ueber">Über uns</a></li>
+    <li>
+      <a href="#kontakt" class="nav-cta desktop-cta">
+        Anfrage stellen
+      </a>
+    </li>
+  </ul>
+
+  <div class="mobile-nav-actions">
+    <a href="#kontakt" class="mobile-request-btn">
+      Anfrage stellen
+    </a>
+
+    <button
+      class="hamburger"
+      type="button"
+      aria-label="Menü öffnen"
+      aria-expanded="false"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
-  </nav>
+  </div>
+</nav>
 
   <!-- ══════════════════════════════════════
        HERO
@@ -47,26 +68,21 @@
     <div class="hero-bg"></div>
     <div class="hero-lines"></div>
     <div class="hero-content">
-     <!-- <p class="hero-tag">Exklusives Catering · Norddeutschland</p>
-      <h1 class="hero-title">
-        EDEL<em>NORD</em><br>CATERING
-      </h1>-->
-      <div class="hero-logo">
-  <img src="assets/Slogan.PNG" alt="Edelnord Logo">
+
+  <div class="hero-logo">
+    <img src="assets/Slogan.PNG" alt="Edelnord Logo">
+  </div>
+
+  <div class="hero-scroll">
+    <span>Entdecken</span>
+    <div class="scroll-line"></div>
+  </div>
+
+  <div class="hero-actions">
+    <a href="#leistungen" class="btn-primary">Unser Angebot</a>
+  </div>
+
 </div>
-       <!-- <p class="hero-sub">
-        Frisch zubereitet, zuverlässig umgesetzt und mit Liebe zum Detail serviert.
-        Für Events, Firmen und ganz besondere Anlässe.
-      </p> -->
-      <div class="hero-actions">
-        <a href="#leistungen" class="btn-primary">Unser Angebot</a>
-        <!-- <a href="#kontakt" class="btn-secondary">Anfrage stellen</a>-->
-      </div>
-    </div>
-    <div class="hero-scroll">
-      <span>Entdecke</span>
-      <div class="scroll-line"></div>
-    </div>
   </section>
 
   <!-- ══════════════════════════════════════
@@ -390,8 +406,11 @@
         <label for="nachricht">Ihre Nachricht</label>
         <textarea id="nachricht" name="Nachricht" placeholder="Erzählen Sie uns von Ihrem Event – Datum, Personenzahl, Wünsche …" required></textarea>
       </div>
+<button type="submit" class="form-submit">
+  Anfrage senden
+</button>
 
-      <button type="submit" class="form-submit">Anfrage senden</button>
+<p class="form-status" aria-live="polite"></p>
     </form>
 
     <div class="contact-alt reveal" data-delay="0.3">

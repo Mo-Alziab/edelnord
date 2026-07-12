@@ -6,126 +6,264 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Custom Cursor ── */
   const cursor = document.querySelector('.cursor');
-  const ring   = document.querySelector('.cursor-ring');
-  let mouseX = 0, mouseY = 0, ringX = 0, ringY = 0;
+  const ring = document.querySelector('.cursor-ring');
 
-  document.addEventListener('mousemove', e => {
-    mouseX = e.clientX; mouseY = e.clientY;
-    if (cursor) { cursor.style.left = mouseX + 'px'; cursor.style.top = mouseY + 'px'; }
+  let mouseX = 0;
+  let mouseY = 0;
+  let ringX = 0;
+  let ringY = 0;
+
+  document.addEventListener('mousemove', event => {
+    mouseX = event.clientX;
+    mouseY = event.clientY;
+
+    if (cursor) {
+      cursor.style.left = `${mouseX}px`;
+      cursor.style.top = `${mouseY}px`;
+    }
   });
 
   function animateRing() {
     if (ring) {
       ringX += (mouseX - ringX) * 0.12;
       ringY += (mouseY - ringY) * 0.12;
-      ring.style.left = ringX + 'px';
-      ring.style.top  = ringY + 'px';
+
+      ring.style.left = `${ringX}px`;
+      ring.style.top = `${ringY}px`;
     }
+
     requestAnimationFrame(animateRing);
   }
+
   animateRing();
 
-  document.querySelectorAll('a, button').forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      if (ring) { ring.style.width = '60px'; ring.style.height = '60px'; ring.style.borderColor = 'var(--gold-bright)'; }
-      if (cursor) cursor.style.transform = 'translate(-50%,-50%) scale(0.5)';
+  document.querySelectorAll('a, button').forEach(element => {
+    element.addEventListener('mouseenter', () => {
+      if (ring) {
+        ring.style.width = '60px';
+        ring.style.height = '60px';
+        ring.style.borderColor = 'var(--gold-bright)';
+      }
+
+      if (cursor) {
+        cursor.style.transform = 'translate(-50%, -50%) scale(0.5)';
+      }
     });
-    el.addEventListener('mouseleave', () => {
-      if (ring) { ring.style.width = '36px'; ring.style.height = '36px'; ring.style.borderColor = 'var(--gold)'; }
-      if (cursor) cursor.style.transform = 'translate(-50%,-50%) scale(1)';
+
+    element.addEventListener('mouseleave', () => {
+      if (ring) {
+        ring.style.width = '36px';
+        ring.style.height = '36px';
+        ring.style.borderColor = 'var(--gold)';
+      }
+
+      if (cursor) {
+        cursor.style.transform = 'translate(-50%, -50%) scale(1)';
+      }
     });
   });
 
   /* ── Navbar scroll ── */
   const nav = document.querySelector('nav');
-  window.addEventListener('scroll', () => {
-    nav.classList.toggle('scrolled', window.scrollY > 60);
-  });
+
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
+    });
+  }
 
   /* ── Mobile menu ── */
   const hamburger = document.querySelector('.hamburger');
-  const navLinks  = document.querySelector('.nav-links');
-  const bars      = document.querySelectorAll('.hamburger span');
+  const navLinks = document.querySelector('.nav-links');
 
   if (hamburger && navLinks) {
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
-      const isOpen = navLinks.classList.contains('open');
-      bars[0].style.transform = isOpen ? 'rotate(45deg) translate(4px, 4px)' : '';
-      bars[1].style.opacity   = isOpen ? '0' : '1';
-      bars[2].style.transform = isOpen ? 'rotate(-45deg) translate(4px, -4px)' : '';
+    hamburger.addEventListener('click', event => {
+      event.stopPropagation();
+
+      const isOpen = navLinks.classList.toggle('open');
+
+      hamburger.classList.toggle('active', isOpen);
+      hamburger.setAttribute('aria-expanded', String(isOpen));
+      hamburger.setAttribute(
+        'aria-label',
+        isOpen ? 'Menü schließen' : 'Menü öffnen'
+      );
     });
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
+
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
         navLinks.classList.remove('open');
-        bars.forEach(b => { b.style.transform = ''; b.style.opacity = '1'; });
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Menü öffnen');
       });
+    });
+
+    document.addEventListener('click', event => {
+      if (!event.target.closest('nav')) {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Menü öffnen');
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) {
+        navLinks.classList.remove('open');
+        hamburger.classList.remove('active');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Menü öffnen');
+      }
     });
   }
 
   /* ── Scroll reveal ── */
   const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry, i) => {
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
-        const delay = entry.target.dataset.delay || 0;
-        setTimeout(() => entry.target.classList.add('visible'), delay * 1000);
+        const delay = Number(entry.target.dataset.delay) || 0;
+
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, delay * 1000);
+
         observer.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.12 });
-  reveals.forEach(el => observer.observe(el));
+  }, {
+    threshold: 0.12
+  });
+
+  reveals.forEach(element => {
+    observer.observe(element);
+  });
 
   /* ── Counter animation ── */
-  function animateCount(el) {
-    const target = parseInt(el.dataset.count);
-    const suffix = el.dataset.suffix || '';
+  function animateCount(element) {
+    const target = parseInt(element.dataset.count, 10);
+    const suffix = element.dataset.suffix || '';
     const duration = 1800;
     const start = performance.now();
-    const step = (now) => {
+
+    if (Number.isNaN(target)) {
+      return;
+    }
+
+    const step = now => {
       const progress = Math.min((now - start) / duration, 1);
       const eased = 1 - Math.pow(1 - progress, 3);
-      el.textContent = Math.floor(eased * target) + suffix;
-      if (progress < 1) requestAnimationFrame(step);
+
+      element.textContent = Math.floor(eased * target) + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
     };
+
     requestAnimationFrame(step);
   }
 
-  const countObserver = new IntersectionObserver((entries) => {
+  const countObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         animateCount(entry.target);
         countObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.5 });
-  document.querySelectorAll('[data-count]').forEach(el => countObserver.observe(el));
+  }, {
+    threshold: 0.5
+  });
 
-  /* ── Contact form ── */
-  const form = document.querySelector('.contact-form');
-  if (form) {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      const btn = form.querySelector('.form-submit');
-      btn.textContent = 'Wird gesendet…';
-      btn.disabled = true;
-      await new Promise(r => setTimeout(r, 1500));
-      btn.textContent = '✓ Anfrage gesendet';
-      btn.style.background = 'linear-gradient(135deg, #2a6e2a, #4caf50)';
+  document.querySelectorAll('[data-count]').forEach(element => {
+    countObserver.observe(element);
+  });
+
+ /* ── Contact form with Formspree ── */
+const form = document.querySelector('.contact-form');
+
+if (form) {
+  const button = form.querySelector('.form-submit');
+  const status = form.querySelector('.form-status');
+
+  form.addEventListener('submit', async event => {
+    event.preventDefault();
+
+    if (!button) {
+      return;
+    }
+
+    button.textContent = 'Wird gesendet…';
+    button.disabled = true;
+
+    if (status) {
+      status.textContent = '';
+      status.classList.remove('success', 'error');
+    }
+
+    try {
+      const formData = new FormData(form);
+
+      const response = await fetch(form.action, {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json'
+        }
+      });
+
+      if (!response.ok) {
+        const responseData = await response.json().catch(() => null);
+
+        const errorMessage =
+          responseData?.errors
+            ?.map(error => error.message)
+            .join(', ') ||
+          'Die Anfrage konnte nicht gesendet werden.';
+
+        throw new Error(errorMessage);
+      }
+
+      button.textContent = '✓ Anfrage gesendet';
+
+      if (status) {
+        status.textContent =
+          'Vielen Dank! Ihre Anfrage wurde erfolgreich gesendet.';
+        status.classList.add('success');
+      }
+
+      form.reset();
+
+    } catch (error) {
+      console.error('Formspree-Fehler:', error);
+
+      button.textContent = 'Erneut versuchen';
+
+      if (status) {
+        status.textContent =
+          'Beim Senden ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.';
+        status.classList.add('error');
+      }
+
+    } finally {
+      button.disabled = false;
+
       setTimeout(() => {
-        btn.textContent = 'Anfrage senden';
-        btn.disabled = false;
-        btn.style.background = '';
-        form.reset();
+        button.textContent = 'Anfrage senden';
       }, 4000);
-    });
-  }
+    }
+  });
+}
 
   /* ── Parallax on hero ── */
   window.addEventListener('scroll', () => {
     const heroLines = document.querySelector('.hero-lines');
+
     if (heroLines) {
-      heroLines.style.transform = `translateY(${window.scrollY * 0.15}px)`;
+      heroLines.style.transform =
+        `translateY(${window.scrollY * 0.15}px)`;
     }
   });
 
