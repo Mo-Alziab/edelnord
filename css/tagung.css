@@ -1,196 +1,385 @@
-.tagung-page{
+/* ============================================
+   TAGUNG-SEITE
+   ============================================ */
 
-width:100%;
-height:100svh;
+.tagung-page {
+  width: 100%;
+  height: 100svh;
+  min-height: 100svh;
 
-overflow:hidden;
+  position: relative;
 
-position:relative;
+  padding: 1.2rem;
 
-display:flex;
-justify-content:center;
-align-items:center;
+  overflow: hidden;
 
-background:
-radial-gradient(circle at top,
-rgba(201,148,58,.12),
-transparent 35%),
-linear-gradient(180deg,#090909,#050505);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-padding:30px;
+  background:
+    radial-gradient(
+      circle at top,
+      rgba(201, 148, 58, 0.12),
+      transparent 35%
+    ),
+    linear-gradient(
+      180deg,
+      #090909,
+      #050505
+    );
 
-}
-
-/* HOME BUTTON */
-
-.home-btn{
-
-position:absolute;
-
-top:20px;
-right:20px;
-
-padding:10px 22px;
-
-background:linear-gradient(
-135deg,
-var(--gold-deep),
-var(--gold-bright),
-var(--gold-deep));
-
-color:black;
-
-font-size:.55rem;
-font-weight:700;
-
-letter-spacing:.18em;
-
-text-decoration:none;
-
-text-transform:uppercase;
-
-border-radius:10px;
-
-box-shadow:0 10px 25px rgba(201,148,58,.35);
-
-transition:.35s;
-
-z-index:50;
-
-}
-
-.home-btn:hover{
-
-transform:translateY(-2px);
-
-box-shadow:0 14px 32px rgba(201,148,58,.45);
-
-}
-
-/* IMAGE */
-
-.tagung-image{
-
-position:absolute;
-
-inset:0;
-
-display:flex;
-
-justify-content:center;
-
-align-items:center;
-
-}
-
-.tagung-image img{
-
-height:94vh;
-
-width:auto;
-
-max-width:98vw;
-
-object-fit:contain;
-
+  border: 1px solid rgba(201, 148, 58, 0.45);
 }
 
 
+/* ============================================
+   INHALT
+   ============================================ */
 
-/* BUTTON */
+.tagung-content {
+  width: 100%;
+  height: 100%;
 
-.partner-btn{
-    position:absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
-top:500px;
-right:20px;
-
-padding:10px 22px;
-
-background:linear-gradient(
-135deg,
-var(--gold-deep),
-var(--gold-bright),
-var(--gold-deep));
-
-color:black;
-
-font-size:.55rem;
-font-weight:700;
-
-letter-spacing:.18em;
-
-text-decoration:none;
-
-text-transform:uppercase;
-
-border-radius:10px;
-
-box-shadow:0 10px 25px rgba(201,148,58,.35);
-
-transition:.35s;
-
-z-index:50;
-
+  gap: 1rem;
 }
 
-.partner-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 14px 32px rgba(201,148,58,.45);
-}
-/* MOBILE */
 
-@media(max-width:900px){
+/* ============================================
+   HOME-BUTTON – DESKTOP
+   ============================================ */
 
-.tagung-image img{
+.home-btn {
+  position: fixed;
 
-height:90vh;
+  top: 1.2rem;
+  right: 1.2rem;
 
-max-width:100%;
+  z-index: 100;
 
-}
+  padding: 0.7rem 1.3rem;
 
-.partner-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-padding:22px;
+  background: linear-gradient(
+    135deg,
+    var(--gold-deep),
+    var(--gold-bright),
+    var(--gold-deep)
+  );
 
-bottom:16px;
+  color: var(--black);
 
-width:94vw;
+  text-decoration: none;
+  text-transform: uppercase;
 
-}
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
 
-.partner-box h2{
+  border-radius: 8px;
 
-font-size:1.6rem;
+  box-shadow: 0 10px 25px rgba(201, 148, 58, 0.35);
 
-}
-
-.partner-box p{
-
-font-size:.72rem;
-
-}
-
-.partner-btn{
-
-top:60px;
-right:14px;
-
-font-size:.48rem;
-
-padding:8px 14px;
-
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-.home-btn{
+.home-btn:hover {
+  transform: translateY(-2px);
 
-top:14px;
-
-right:14px;
-
-padding:8px 16px;
-
+  box-shadow: 0 14px 32px rgba(201, 148, 58, 0.45);
 }
 
+
+/* ============================================
+   TAGUNGSBILD
+   ============================================ */
+
+.tagung-image {
+  width: 100%;
+  min-height: 0;
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow: hidden;
+}
+
+.tagung-image picture {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tagung-image img {
+  width: auto;
+  height: auto;
+
+  max-width: 98vw;
+  max-height: calc(100svh - 110px);
+
+  display: block;
+
+  object-fit: contain;
+
+  user-select: none;
+  -webkit-user-drag: none;
+
+  border: 1px solid rgba(201, 148, 58, 0.35);
+  border-radius: 12px;
+
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+
+/* ============================================
+   ANFRAGE-BUTTON – DESKTOP
+   ============================================ */
+
+.partner-btn {
+  position: static;
+
+  width: fit-content;
+  min-width: 170px;
+
+  margin: 0 auto;
+  padding: 0.8rem 1.4rem;
+
+  display: block;
+
+  background: linear-gradient(
+    135deg,
+    var(--gold-deep),
+    var(--gold-bright),
+    var(--gold-deep)
+  );
+
+  color: var(--black);
+
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+
+  border-radius: 8px;
+
+  box-shadow: 0 10px 25px rgba(201, 148, 58, 0.35);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.partner-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 14px 32px rgba(201, 148, 58, 0.45);
+}
+
+
+/* ============================================
+   HANDY
+   ============================================ */
+
+@media (max-width: 900px) {
+
+  html,
+  body {
+    width: 100%;
+    min-height: 100%;
+
+    overflow-x: hidden;
+  }
+
+  body {
+    cursor: auto;
+  }
+
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+
+
+  /* Seite auf dem Handy scrollbar */
+
+  .tagung-page {
+    width: 100%;
+    height: auto;
+    min-height: 100svh;
+
+    padding:
+      calc(3.8rem + env(safe-area-inset-top))
+      0.55rem
+      calc(1.5rem + env(safe-area-inset-bottom));
+
+    display: block;
+
+    overflow-x: hidden;
+    overflow-y: visible;
+  }
+
+
+  /* Kleiner Pfeil oben links */
+
+  .home-btn {
+    position: fixed;
+
+    top: calc(0.7rem + env(safe-area-inset-top));
+    left: 0.7rem;
+    right: auto;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    font-size: 0;
+    letter-spacing: 0;
+
+    z-index: 100;
+  }
+
+  .home-btn::before {
+    content: "←";
+
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+
+  /* Bild und Button untereinander */
+
+  .tagung-content {
+    position: static;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.9rem;
+  }
+
+
+  /* Desktop-Positionierung vollständig zurücksetzen */
+
+  .tagung-image {
+    position: static !important;
+    inset: auto !important;
+
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    overflow: visible;
+  }
+
+  .tagung-image picture {
+    width: 100%;
+    height: auto;
+
+    display: block;
+  }
+
+  .tagung-image picture img {
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+    max-height: none;
+
+    display: block;
+
+    margin: 0;
+
+    object-fit: contain;
+
+    border: 1px solid rgba(201, 148, 58, 0.4);
+    border-radius: 10px;
+
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.48);
+  }
+
+
+  /* Anfrage-Button direkt unter dem vollständigen Bild */
+
+  .partner-btn {
+    position: static !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    width: fit-content;
+    min-width: 140px;
+
+    margin: 20px auto 0;
+    padding: 10px 22px;
+
+    display: block;
+
+    font-size: 0.52rem;
+    letter-spacing: 0.13em;
+
+    border-radius: 3px;
+  }
+
+  .partner-btn:active {
+    transform: scale(0.97);
+  }
+}
+
+
+/* ============================================
+   SEHR KLEINE HANDYS
+   ============================================ */
+
+@media (max-width: 420px) {
+
+  .tagung-page {
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+  }
+
+  .home-btn {
+    width: 34px;
+    height: 34px;
+  }
+
+  .home-btn::before {
+    font-size: 1.1rem;
+  }
+
+  .partner-btn {
+    min-width: 130px;
+
+    padding: 0.62rem 0.85rem;
+
+    font-size: 0.48rem;
+  }
 }

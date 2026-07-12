@@ -1,46 +1,76 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
 
-<title>Tagung | Edelnord Catering</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-<link rel="stylesheet" href="css/style.css">
-<link rel="stylesheet" href="css/tagung.css">
+  <meta
+    name="description"
+    content="Tagungen mit EdelNord Catering und unserem Partner Hotel & Eventlocation Adler."
+  >
+
+  <title>Tagung | EdelNord Catering</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/tagung.css">
 </head>
 
 <body>
 
-<div class="cursor"></div>
-<div class="cursor-ring"></div>
+  <div class="cursor"></div>
+  <div class="cursor-ring"></div>
 
-<section class="tagung-page">
+  <section class="tagung-page">
 
-<a href="index.html" class="home-btn">
-Home
-</a>
+    <a
+      href="index.html"
+      class="home-btn"
+      aria-label="Zurück zur Startseite"
+    >
+      Home
+    </a>
 
-<div class="tagung-image">
+    <main class="tagung-content">
 
-<img src="assets/tagung/tagung.PNG" alt="Tagung">
+      <div class="tagung-image">
 
-</div>
+        <picture>
 
+          <!-- Eigenes langes Bild für Handy -->
+          <source
+            media="(max-width: 900px)"
+            srcset="assets/tagung/tagung-mobile.PNG"
+          >
 
-<a href="https://www.adler-iz.de"
-   target="_blank"
-   class="partner-btn">
+          <!-- Normales Bild für Desktop -->
+          <img
+            src="assets/tagung/tagung.PNG"
+            alt="Tagungsangebot von EdelNord Catering"
+            draggable="false"
+          >
 
-    Anfragen
+        </picture>
 
-</a>
+      </div>
 
-</div>
+      <a
+        href="https://www.adler-iz.de"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="partner-btn"
+      >
+        Anfragen
+      </a>
 
-</section>
+    </main>
 
-<script src="js/main.js"></script>
+  </section>
+
+  <script src="js/main.js"></script>
 
 </body>
 </html>
