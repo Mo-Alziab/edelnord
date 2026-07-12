@@ -1,30 +1,55 @@
 /* ============================================
-   BUFFET-SEITE – DESKTOP
+   EDELNORD BUFFET-SEITE
+   ============================================ */
+
+
+/* ============================================
+   GRUNDLAYOUT – DESKTOP
    ============================================ */
 
 .buffet-page {
-  min-height: 100svh;
+  width: 100%;
   height: 100svh;
+  min-height: 100svh;
+
+  position: relative;
+
+  padding: 1.2rem;
+
   overflow: hidden;
+
   background:
     radial-gradient(
       circle at 50% 0%,
       rgba(201, 148, 58, 0.13),
       transparent 35%
     ),
-    linear-gradient(180deg, #080808, #050505);
+    linear-gradient(
+      180deg,
+      #080808,
+      #050505
+    );
+
   border: 1px solid rgba(201, 148, 58, 0.45);
-  padding: 1.2rem;
-  position: relative;
 }
+
+
+/* ============================================
+   HOME-BUTTON – DESKTOP
+   ============================================ */
 
 .home-btn {
   position: fixed;
   top: 1.2rem;
   right: 1.2rem;
-  z-index: 50;
+
+  z-index: 100;
 
   padding: 0.7rem 1.3rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background: linear-gradient(
     135deg,
@@ -33,13 +58,33 @@
   );
 
   color: var(--black);
+
   text-decoration: none;
   text-transform: uppercase;
 
   font-size: 0.65rem;
-  letter-spacing: 0.2em;
   font-weight: 700;
+  letter-spacing: 0.2em;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
+
+.home-btn:hover {
+  transform: translateY(-2px);
+
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.5),
+    0 0 20px rgba(201, 148, 58, 0.2);
+}
+
+
+/* ============================================
+   HAUPT-CONTAINER
+   ============================================ */
 
 .buffet-container {
   width: 100%;
@@ -47,24 +92,39 @@
 
   display: grid;
   grid-template-columns: 320px minmax(0, 1fr);
+
   gap: 1.3rem;
 }
 
+
+/* ============================================
+   SIDEBAR – DESKTOP
+   ============================================ */
+
 .buffet-sidebar {
   min-width: 0;
+  height: 100%;
 
-  border-right: 1px solid rgba(201, 148, 58, 0.35);
-
-  padding: 0.5rem 3rem 2rem;
+  padding:
+    0.5rem
+    3rem
+    2rem;
 
   display: flex;
   flex-direction: column;
+
   gap: 1.1rem;
+
+  border-right: 1px solid rgba(201, 148, 58, 0.35);
 }
 
-/* Logo */
+
+/* ============================================
+   LOGO – DESKTOP
+   ============================================ */
 
 .buffet-logo {
+  width: 100%;
   height: 165px;
 
   display: flex;
@@ -77,14 +137,22 @@
   max-width: 300px;
   max-height: 300px;
 
+  display: block;
+
   object-fit: contain;
 }
 
-/* Buffet-Buttons */
+
+/* ============================================
+   BUFFET-BUTTONS – DESKTOP
+   ============================================ */
 
 .buffet-tabs {
+  width: 100%;
+
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+
   gap: 0.65rem;
 }
 
@@ -95,28 +163,35 @@
 
   padding: 6px;
 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   background: rgba(10, 10, 10, 0.85);
+
   border: 1px solid rgba(201, 148, 58, 0.45);
 
   color: var(--white);
+
   font-family: var(--font-display);
   font-size: 0.72rem;
   line-height: 1.2;
   letter-spacing: 0.04em;
 
-  text-transform: uppercase;
   text-align: center;
+  text-transform: uppercase;
 
   cursor: pointer;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
   transition:
-    background 0.3s ease,
     color 0.3s ease,
-    transform 0.3s ease;
+    background 0.3s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.buffet-tab:hover {
+  transform: translateY(-1px);
 }
 
 .buffet-tab.active,
@@ -130,10 +205,15 @@
     var(--gold-deep)
   );
 
-  box-shadow: inset 0 0 25px rgba(255, 255, 255, 0.18);
+  box-shadow:
+    inset 0 0 25px rgba(255, 255, 255, 0.18),
+    0 5px 20px rgba(0, 0, 0, 0.25);
 }
 
-/* Album */
+
+/* ============================================
+   ALBUM – DESKTOP
+   ============================================ */
 
 .side-album {
   width: 100%;
@@ -141,11 +221,12 @@
 
   padding: 7px;
 
-  border: 1px solid rgba(201, 148, 58, 0.55);
-  border-radius: 14px;
+  overflow: hidden;
 
   background: #090909;
-  overflow: hidden;
+
+  border: 1px solid rgba(201, 148, 58, 0.55);
+  border-radius: 14px;
 
   box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
 }
@@ -155,6 +236,7 @@
   height: 100%;
 
   display: block;
+
   object-fit: cover;
 
   border-radius: 9px;
@@ -162,17 +244,18 @@
   transition: opacity 0.45s ease;
 }
 
-/* Anfrage-Button */
+
+/* ============================================
+   ANFRAGE-BUTTON – DESKTOP
+   ============================================ */
 
 .buffet-cta {
-  display: block;
+  width: 100%;
 
   margin-top: auto;
   padding: 1rem;
 
-  text-align: center;
-  text-decoration: none;
-  text-transform: uppercase;
+  display: block;
 
   background: linear-gradient(
     135deg,
@@ -183,14 +266,41 @@
 
   color: var(--black);
 
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
   font-size: 0.7rem;
-  letter-spacing: 0.22em;
   font-weight: 800;
+  letter-spacing: 0.22em;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
-/* Buffet-Menübild */
+.buffet-cta:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 10px 30px rgba(201, 148, 58, 0.25);
+}
+
+
+/* ============================================
+   MENÜBEREICH – DESKTOP
+   ============================================ */
+
+.menu-section {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
 
 .menu-area {
+  width: 100%;
   min-width: 0;
   height: 100%;
 
@@ -199,24 +309,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  overflow: hidden;
 }
 
 .menu-area img {
-  max-width: 100%;
-  max-height: calc(100svh - 80px);
-
   width: auto;
   height: auto;
 
+  max-width: 100%;
+  max-height: calc(100svh - 80px);
+
   display: block;
-  object-fit: contain;
 
   margin: auto;
 
-  transition: opacity 0.25s ease;
+  object-fit: contain;
+
+  user-select: none;
+  -webkit-user-drag: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.35s ease;
 }
+
+
+/* Mobile Elemente auf Desktop ausblenden */
+
+.mobile-slider-header,
+.mobile-indicator {
+  display: none;
+}
+
+
 /* ============================================
-   HANDY-ANSICHT
+   HANDY
    ============================================ */
 
 @media (max-width: 900px) {
@@ -224,6 +352,8 @@
   html,
   body {
     width: 100%;
+    min-height: 100%;
+
     overflow-x: hidden;
   }
 
@@ -236,59 +366,58 @@
     display: none;
   }
 
+
+  /* ==========================================
+     MOBILE SEITE
+     ========================================== */
+
   .buffet-page {
     width: 100%;
     height: auto;
     min-height: 100svh;
 
-    overflow: visible;
-
     padding:
-      calc(3.5rem + env(safe-area-inset-top))
+      calc(3.7rem + env(safe-area-inset-top))
       0.65rem
       calc(2rem + env(safe-area-inset-bottom));
+
+    overflow: visible;
   }
 
-  /*
-    Kleiner Zurück-Pfeil oben rechts
-  */
+
+  /* ==========================================
+     KLEINER HOME-PFEIL
+     ========================================== */
 
   .home-btn {
-    position: fixed;
-    top: 0.7rem;
-    right: 0.7rem;
-    z-index: 100;
+    top: calc(0.7rem + env(safe-area-inset-top));
+    left: 0.7rem;
+    right: auto;
 
-    width: 38px;
-    height: 38px;
+    width: 36px;
+    height: 36px;
+
     padding: 0;
 
     border-radius: 50%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: linear-gradient(
-      135deg,
-      var(--gold-deep),
-      var(--gold-bright)
-    );
-
-    color: var(--black);
-
     font-size: 0;
-    text-decoration: none;
-
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    letter-spacing: 0;
   }
 
   .home-btn::before {
     content: "←";
-    font-size: 1.25rem;
+
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
     font-weight: 700;
     line-height: 1;
   }
+
+
+  /* ==========================================
+     MOBILE LAYOUT
+     ========================================== */
 
   .buffet-container {
     width: 100%;
@@ -301,113 +430,143 @@
   }
 
   /*
-    Sidebar-Box wird entfernt,
-    damit alle Elemente frei sortiert werden können
+    Die Sidebar-Hülle wird entfernt.
+    Die enthaltenen Elemente lassen sich dadurch
+    frei in der gewünschten Reihenfolge anzeigen.
   */
 
   .buffet-sidebar {
     display: contents;
   }
 
-  /*
-    Logo auf dem Handy komplett ausblenden
-  */
+
+  /* Logo auf dem Handy ausblenden */
 
   .buffet-logo {
     display: none;
   }
 
-  /*
-    Reihenfolge:
-    1. Buffetnamen
-    2. Menübild
-    3. Anfrage
-    4. Album
-  */
+
+  /* Desktop-Buffet-Buttons ausblenden */
 
   .buffet-tabs {
+    display: none;
+  }
+
+
+  /* Reihenfolge */
+
+  .menu-section {
     order: 1;
   }
 
-  .menu-area {
+  .buffet-cta {
     order: 2;
   }
 
-  .buffet-cta {
+  .side-album {
     order: 3;
   }
 
-  .side-album {
-    order: 4;
+
+  /* ==========================================
+     MOBILE MENÜBEREICH
+     ========================================== */
+
+  .menu-section {
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.65rem;
   }
 
-  /*
-    Buffetnamen:
-    4 Buttons pro Reihe
-  */
 
-  .buffet-tabs {
+  /* ==========================================
+     TITEL UND PFEILE
+     ========================================== */
+
+  .mobile-slider-header {
     width: 100%;
+    min-height: 44px;
 
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: 42px minmax(0, 1fr) 42px;
 
-    gap: 4px;
+    align-items: center;
+
+    gap: 0.45rem;
 
     margin: 0;
   }
 
-  .buffet-tab {
-    width: 100%;
+  #mobile-buffet-title {
     min-width: 0;
 
-    height: 46px;
-    min-height: 46px;
+    margin: 0;
 
-    padding: 3px 2px;
+    color: var(--gold-bright);
+
+    font-family: var(--font-display);
+    font-size: clamp(1.05rem, 5.2vw, 1.45rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+
+    text-align: center;
+
+    overflow-wrap: anywhere;
+
+    text-shadow: 0 0 20px rgba(201, 148, 58, 0.2);
+  }
+
+  .slider-arrow {
+    width: 38px;
+    height: 38px;
+
+    padding: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    background: rgba(10, 10, 10, 0.9);
-    border: 1px solid rgba(201, 148, 58, 0.45);
+    background: transparent;
 
-    color: var(--white);
+    border: 1px solid rgba(201, 148, 58, 0.65);
+    border-radius: 50%;
 
-    font-family: var(--font-ui);
-    font-size: 0.43rem;
-    line-height: 1.15;
-    letter-spacing: 0;
+    color: var(--gold-bright);
 
-    text-align: center;
-    text-transform: uppercase;
-
-    overflow-wrap: anywhere;
-    word-break: normal;
+    font-family: Arial, sans-serif;
+    font-size: 1.15rem;
+    line-height: 1;
 
     cursor: pointer;
+
+    transition:
+      color 0.25s ease,
+      background 0.25s ease,
+      transform 0.25s ease;
   }
 
-  .buffet-tab.active,
-  .buffet-tab:hover {
+  .slider-arrow:active {
     color: var(--black);
 
     background: linear-gradient(
       135deg,
       var(--gold-deep),
-      var(--gold-bright),
-      var(--gold-deep)
+      var(--gold-bright)
     );
+
+    transform: scale(0.92);
   }
 
-  .buffet-tab:active {
-    transform: scale(0.97);
-  }
 
-  /*
-    Menübild direkt unter den Namen
-  */
+  /* ==========================================
+     MENÜBILD
+     ========================================== */
 
   .menu-area {
     width: 100%;
@@ -417,81 +576,123 @@
     margin: 0;
 
     display: block;
+
+    overflow: hidden;
+
+    border: 1px solid rgba(201, 148, 58, 0.5);
+    border-radius: 11px;
+
+    background: #080808;
+
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.48);
+
+    touch-action: pan-y;
   }
 
   .menu-area img {
     width: 100%;
-    max-width: 100%;
-    max-height: none;
     height: auto;
 
+    max-width: 100%;
+    max-height: none;
+
     display: block;
+
     margin: 0;
 
     object-fit: contain;
 
-    border: 1px solid rgba(201, 148, 58, 0.5);
     border-radius: 10px;
 
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+    touch-action: pan-y;
+
+    transition:
+      opacity 0.2s ease,
+      transform 0.28s ease;
   }
 
-  /*
-    Kleiner Anfrage-Button unter dem Menübild
-  */
+
+  /* ==========================================
+     ZÄHLER UND SWIPE-HINWEIS
+     ========================================== */
+
+  .mobile-indicator {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 0.2rem;
+
+    margin: 0.1rem 0 0;
+  }
+
+  #buffet-counter {
+    color: var(--gold-bright);
+
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+  }
+
+  .swipe-hint {
+    color: rgba(249, 245, 238, 0.48);
+
+    font-size: 0.52rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+
+    text-align: center;
+  }
+
+
+  /* ==========================================
+     KLEINER ANFRAGE-BUTTON
+     ========================================== */
 
   .buffet-cta {
     width: fit-content;
-    min-width: 150px;
+    min-width: 140px;
 
-    margin: 0 auto;
-    padding: 0.7rem 1.1rem;
-
-    text-align: center;
-
-    background: linear-gradient(
-      135deg,
-      var(--gold-deep),
-      var(--gold-bright),
-      var(--gold-deep)
-    );
-
-    color: var(--black);
-
-    font-size: 0.55rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
+    margin: 0.15rem auto 0.25rem;
+    padding: 0.68rem 1rem;
 
     border-radius: 3px;
+
+    font-size: 0.52rem;
+    font-weight: 800;
+    letter-spacing: 0.13em;
   }
 
-  /*
-    Album unter dem Anfrage-Button
-  */
+  .buffet-cta:active {
+    transform: scale(0.97);
+  }
+
+
+  /* ==========================================
+     ALBUM UNTER DEM BUTTON
+     ========================================== */
 
   .side-album {
     width: 100%;
     aspect-ratio: 16 / 9;
 
-    margin-top: 0.2rem;
+    margin: 0.15rem 0 0;
     padding: 5px;
 
     border-radius: 10px;
   }
 
   .side-album img {
-    width: 100%;
-    height: 100%;
-
-    display: block;
-    object-fit: cover;
-
     border-radius: 6px;
   }
 }
 
 
-/* Sehr kleine Handys */
+/* ============================================
+   SEHR KLEINE HANDYS
+   ============================================ */
 
 @media (max-width: 420px) {
 
@@ -500,26 +701,29 @@
     padding-right: 0.45rem;
   }
 
-  .buffet-tabs {
-    gap: 3px;
+  .mobile-slider-header {
+    grid-template-columns: 36px minmax(0, 1fr) 36px;
+
+    gap: 0.3rem;
   }
 
-  .buffet-tab {
-    height: 44px;
-    min-height: 44px;
+  .slider-arrow {
+    width: 34px;
+    height: 34px;
 
-    padding: 2px 1px;
+    font-size: 1rem;
+  }
 
-    font-size: 0.39rem;
-    line-height: 1.1;
+  #mobile-buffet-title {
+    font-size: 1rem;
   }
 
   .buffet-cta {
-    min-width: 135px;
+    min-width: 130px;
 
-    padding: 0.62rem 0.9rem;
+    padding: 0.62rem 0.85rem;
 
-    font-size: 0.5rem;
+    font-size: 0.48rem;
   }
 
   .home-btn {

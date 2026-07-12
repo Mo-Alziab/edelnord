@@ -1,53 +1,212 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Buffets – Edelnord Catering</title>
+  <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/buffets.css" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Entdecken Sie die Buffet-Auswahl von EdelNord Catering."
+  >
+
+  <title>Buffets – EdelNord Catering</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/buffets.css">
 </head>
 
 <body>
+
+  <!-- Eigener Cursor für Desktop -->
   <div class="cursor"></div>
   <div class="cursor-ring"></div>
 
- <section class="buffet-page">
-  <a href="index.html" class="home-btn" aria-label="Zurück zur Startseite"></a>
+  <section class="buffet-page">
 
-  <div class="buffet-container">
+    <!--
+      Auf dem Desktop steht hier „Home“.
+      Auf dem Handy wird daraus automatisch ein kleiner Pfeil.
+    -->
+    <a
+      href="index.html"
+      class="home-btn"
+      aria-label="Zurück zur Startseite"
+    >
+      Home
+    </a>
 
-    <aside class="buffet-sidebar">
-      <div class="buffet-logo">
-        <img src="assets/Slogan.PNG" alt="Edelnord Catering">
-      </div>
+    <div class="buffet-container">
 
-      <div class="buffet-tabs">
-        <button class="buffet-tab active" data-buffet="0">Klassisches Buffet</button>
-        <button class="buffet-tab" data-buffet="1">Norddeutsches Buffet</button>
-        <button class="buffet-tab" data-buffet="2">Mediterranes Buffet</button>
-        <button class="buffet-tab" data-buffet="3">Orientalisches Buffet</button>
-        <button class="buffet-tab" data-buffet="4">Grillbuffet</button>
-        <button class="buffet-tab" data-buffet="5">BBQ Premium Buffet</button>
-        <button class="buffet-tab" data-buffet="6">Sommerliches Grillbuffet</button>
-        <button class="buffet-tab" data-buffet="7">Genussbuffet</button>
-      </div>
+      <!-- =====================================
+           LINKE SEITE / DESKTOP
+           ===================================== -->
+      <aside class="buffet-sidebar">
 
-      <div class="side-album">
-        <img id="side-album-image" src="assets/album1.jpg" alt="Buffet Foto">
-      </div>
+        <div class="buffet-logo">
+          <img
+            src="assets/Slogan.PNG"
+            alt="EdelNord Catering"
+          >
+        </div>
 
-      <a href="index.html#kontakt" class="buffet-cta">Anfrage stellen</a>
-    </aside>
+        <!-- Buffet-Buttons nur auf Desktop -->
+        <div class="buffet-tabs" aria-label="Buffet auswählen">
 
-    <main class="menu-area">
-      <img id="buffet-image" src="assets/buffet/buffet1.png" alt="Buffet 1">
-    </main>
+          <button
+            type="button"
+            class="buffet-tab active"
+            data-buffet="0"
+          >
+            Klassisches Buffet
+          </button>
 
-  </div>
-</section>
+          <button
+            type="button"
+            class="buffet-tab"
+            data-buffet="1"
+          >
+            Norddeutsches Buffet
+          </button>
+
+          <button
+            type="button"
+            class="buffet-tab"
+            data-buffet="2"
+          >
+            Mediterranes Buffet
+          </button>
+
+          <button
+            type="button"
+            class="buffet-tab"
+            data-buffet="3"
+          >
+            Orientalisches Buffet
+          </button>
+
+          <button
+            type="button"
+            class="buffet-tab"
+            data-buffet="4"
+          >
+            Grillbuffet
+          </button>
+
+          <button
+            type="button"
+            class="buffet-tab"
+            data-buffet="5"
+          >
+            BBQ Premium Buffet
+          </button>
+
+          <button
+            type="button"
+            class="buffet-tab"
+            data-buffet="6"
+          >
+            Sommerliches Grillbuffet
+          </button>
+
+          <button
+            type="button"
+            class="buffet-tab"
+            data-buffet="7"
+          >
+            Genussbuffet
+          </button>
+
+        </div>
+
+        <!-- Album -->
+        <div class="side-album">
+          <img
+            id="side-album-image"
+            src="assets/album1.jpg"
+            alt="Buffet Impression"
+          >
+        </div>
+
+        <!-- Anfrage -->
+        <a
+          href="index.html#kontakt"
+          class="buffet-cta"
+        >
+          Anfrage stellen
+        </a>
+
+      </aside>
+
+
+      <!-- =====================================
+           MENÜBEREICH
+           ===================================== -->
+      <main class="menu-section">
+
+        <!-- Nur auf dem Handy sichtbar -->
+        <div class="mobile-slider-header">
+
+          <button
+            type="button"
+            id="prev-buffet"
+            class="slider-arrow"
+            aria-label="Vorheriges Buffet"
+          >
+            &#10094;
+          </button>
+
+          <h1 id="mobile-buffet-title">
+            Klassisches Buffet
+          </h1>
+
+          <button
+            type="button"
+            id="next-buffet"
+            class="slider-arrow"
+            aria-label="Nächstes Buffet"
+          >
+            &#10095;
+          </button>
+
+        </div>
+
+        <!-- Buffet-Menübild -->
+        <div class="menu-area">
+
+          <img
+            id="buffet-image"
+            src="assets/buffet/buffet1.png"
+            alt="Klassisches Buffet"
+            draggable="false"
+          >
+
+        </div>
+
+        <!-- Nur auf dem Handy sichtbar -->
+        <div class="mobile-indicator">
+
+          <span id="buffet-counter">
+            1 / 8
+          </span>
+
+          <span class="swipe-hint">
+            Nach links oder rechts wischen
+          </span>
+
+        </div>
+
+      </main>
+
+    </div>
+
+  </section>
+
   <script src="js/main.js"></script>
   <script src="js/buffets.js"></script>
+
 </body>
 </html>
