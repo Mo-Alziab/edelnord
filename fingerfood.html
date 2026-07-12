@@ -1,28 +1,70 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fingerfood – Edelnord Catering</title>
+  <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="css/style.css" />
-  <link rel="stylesheet" href="css/fingerfood.css" />
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="Fingerfood-Angebot von EdelNord Catering."
+  >
+
+  <title>Fingerfood – EdelNord Catering</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/fingerfood.css">
 </head>
 
 <body>
+
   <div class="cursor"></div>
   <div class="cursor-ring"></div>
 
   <section class="fingerfood-page">
-    <a href="index.html" class="finger-home-btn">Home</a>
 
-    <main class="fingerfood-center">
-      <img src="assets/fingerfood/fingerfood.PNG" alt="Fingerfood Menü">
+    <!-- Auf dem Desktop Home-Button,
+         auf dem Handy kleiner Pfeil -->
+    <a
+  href="index.html"
+  class="finger-home-btn"
+  aria-label="Zurück zur Startseite"
+>
+  Home
+</a>
+
+    <main class="fingerfood-content">
+
+   <div class="fingerfood-center">
+  <picture>
+    <source
+      media="(max-width: 900px)"
+      srcset="assets/fingerfood/fingerfood-mobile.PNG"
+    >
+
+    <img
+      src="assets/fingerfood/fingerfood.PNG"
+      alt="Fingerfood Menü von EdelNord Catering"
+      draggable="false"
+    >
+  </picture>
+</div>
+
+      <a
+        href="index.html#kontakt"
+        class="fingerfood-cta"
+      >
+        Anfrage stellen
+      </a>
+
     </main>
 
-    <a href="index.html#kontakt" class="fingerfood-cta">Anfragen</a>
   </section>
 
   <script src="js/main.js"></script>
+
 </body>
 </html>

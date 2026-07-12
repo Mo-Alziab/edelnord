@@ -98,25 +98,162 @@ z-index:50;
   transform: translateX(-50%) translateY(-2px);
   box-shadow: 0 12px 28px rgba(201,148,58,.45);
 }
-
 @media (max-width: 900px) {
 
-  .fingerfood-center img{
-      height:92vh;
-      max-width:98vw;
+  html,
+  body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
   }
 
-  .finger-home-btn{
-      top:12px;
-      right:12px;
-      padding:7px 14px;
-      font-size:.5rem;
+  body {
+    cursor: auto;
   }
 
-  .fingerfood-cta{
-      bottom:12px;
-      width:auto;
-      padding:9px 18px;
-      font-size:.55rem;
+  .cursor,
+  .cursor-ring {
+    display: none;
+  }
+
+  .fingerfood-page {
+    width: 100%;
+    height: auto;
+    min-height: 100svh;
+
+    padding:
+      calc(3.8rem + env(safe-area-inset-top))
+      0.55rem
+      calc(1.5rem + env(safe-area-inset-bottom));
+
+    overflow-x: hidden;
+    overflow-y: visible;
+
+    display: block;
+  }
+
+  /* Kleiner Pfeil oben links */
+
+  .finger-home-btn {
+    position: fixed;
+
+    top: calc(0.7rem + env(safe-area-inset-top));
+    left: 0.7rem;
+    right: auto;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    font-size: 0;
+    letter-spacing: 0;
+
+    z-index: 100;
+  }
+
+  .finger-home-btn::before {
+    content: "←";
+
+    font-family: Arial, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  /* Bild und Anfrage-Button untereinander */
+
+  .fingerfood-content {
+    position: static;
+
+    width: 100%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.9rem;
+  }
+
+  /*
+    Wichtig:
+    position:absolute und inset:0 vom Desktop zurücksetzen.
+  */
+
+  .fingerfood-center {
+    position: static !important;
+    inset: auto !important;
+
+    width: 100%;
+    height: auto;
+
+    display: block;
+
+    padding: 0;
+    overflow: visible;
+  }
+
+  .fingerfood-center picture {
+    width: 100%;
+    height: auto;
+
+    display: block;
+  }
+
+  .fingerfood-center picture img {
+    width: 100%;
+    height: auto;
+
+    max-width: 100%;
+    max-height: none;
+
+    display: block;
+
+    margin: 0;
+
+    object-fit: contain;
+
+    border: 1px solid rgba(201, 148, 58, 0.4);
+    border-radius: 10px;
+
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.48);
+  }
+
+  /* Anfrage-Button direkt nach dem vollständigen Bild */
+
+  .fingerfood-cta {
+    position: static !important;
+
+    top: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+
+    display: block;
+
+    width: fit-content;
+    min-width: 140px;
+
+    margin: 20px auto 0;
+    padding: 10px 22px;
+
+    text-align: center;
+
+    font-size: 0.52rem;
+    letter-spacing: 0.13em;
+  }
+
+  .fingerfood-cta:hover {
+    transform: translateY(-2px);
+  }
+
+  .fingerfood-cta:active {
+    transform: scale(0.97);
   }
 }
