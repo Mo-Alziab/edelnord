@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Weihnachtsbuffets von EdelNord Catering – Menü mit Abholung."
+  />
+  <title>Weihnachtsbuffets – EdelNord Catering</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    :root {
+      --bg: #0d0f13;
+      --panel: rgba(28, 29, 34, 0.92);
+      --line: rgba(212, 175, 55, 0.55);
+      --gold: #d7b86a;
+      --gold-soft: #f2d79b;
+      --text: #f5f1ea;
+      --muted: rgba(255,255,255,0.72);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Georgia", "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 26%),
+        linear-gradient(180deg, #0b0d10 0%, #101317 100%);
+      color: var(--text);
+    }
+
+    .page-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 32px 24px 64px;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 18px;
+      margin-bottom: 28px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--text);
+      font-size: 1.2rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .brand-mark {
+      width: 26px;
+      height: 26px;
+      border: 1px solid var(--gold);
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      font-size: 0.8rem;
+      box-shadow: 0 0 18px rgba(212, 175, 55, 0.2);
+    }
+
+    .brand span:last-child {
+      color: var(--gold-soft);
+      font-weight: 400;
+      letter-spacing: 0.28em;
+      font-size: 0.72rem;
+      opacity: 0.88;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      font-size: 0.72rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .nav a {
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .nav a:hover {
+      color: var(--gold-soft);
+    }
+
+    .home-link {
+      display: inline-block;
+      margin: 8px 0 18px;
+      color: var(--gold-soft);
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      border: 1px solid rgba(212, 175, 55, 0.58);
+      border-radius: 999px;
+      padding: 10px 18px;
+      transition: 0.2s ease;
+    }
+
+    .home-link:hover {
+      background: rgba(212, 175, 55, 0.08);
+    }
+
+    .header {
+      text-align: center;
+      margin: 28px 0 28px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      letter-spacing: 0.34em;
+      text-transform: uppercase;
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.4rem, 5vw, 5rem);
+      font-weight: 400;
+      color: var(--gold-soft);
+      line-height: 1.15;
+      font-style: italic;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      margin-top: 18px;
+      opacity: 0.9;
+    }
+
+    .divider-line {
+      width: 120px;
+      height: 1px;
+      background: rgba(212, 175, 55, 0.45);
+    }
+
+    .divider-icon {
+      color: var(--gold);
+      font-size: 1rem;
+    }
+
+    .pdf-panel {
+      background: rgba(14, 15, 18, 0.7);
+      border: 1px solid rgba(212, 175, 55, 0.7);
+      border-radius: 18px;
+      overflow: hidden;
+      box-shadow: 0 18px 45px rgba(0,0,0,0.22);
+    }
+
+    .pdf-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.38);
+      background: rgba(212, 175, 55, 0.04);
+    }
+
+    .pdf-title {
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      opacity: 0.9;
+    }
+
+    .pdf-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 11px 18px;
+      text-decoration: none;
+      border-radius: 999px;
+      border: 1px solid var(--gold);
+      background: rgba(212, 175, 55, 0.08);
+      color: var(--gold-soft);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-size: 0.7rem;
+      transition: transform 0.2s ease, background 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      background: rgba(212, 175, 55, 0.14);
+    }
+
+    .pdf-view {
+      width: 100%;
+      height: 78vh;
+      min-height: 640px;
+      background: #fff;
+      border: 0;
+      display: block;
+    }
+
+    .fallback {
+      padding: 26px 20px 28px;
+      color: var(--muted);
+      text-align: center;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav {
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+
+      .pdf-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .pdf-view {
+        min-height: 480px;
+        height: 64vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="topbar">
+      <a href="index.html" class="brand" aria-label="Zur Startseite">
+        <span class="brand-mark">E</span>
+        <span>EdelNord</span>
+        <span>Catering</span>
+      </a>
+
+      <nav class="nav" aria-label="Hauptnavigation">
+        <a href="index.html#leistungen">Leistungen</a>
+        <a href="index.html#angebote">Mittagstisch</a>
+        <a href="index.html#ueber">Über uns</a>
+        <a href="index.html#kontakt">Kontakt</a>
+      </nav>
+    </div>
+
+    <a href="index.html" class="home-link">← Zurück</a>
+
+    <header class="header">
+      <div class="eyebrow">Unsere Leistungen</div>
+      <h1>Weihnachtsbuffets</h1>
+      <div class="divider" aria-hidden="true">
+        <span class="divider-line"></span>
+        <span class="divider-icon">✦</span>
+        <span class="divider-line"></span>
+      </div>
+    </header>
+
+    <section class="pdf-panel" aria-label="PDF Menü für Weihnachtsbuffets">
+      <div class="pdf-toolbar">
+        <div class="pdf-title">Menükarte – Abholung</div>
+        <div class="pdf-actions">
+          <a
+            class="btn"
+            href="assets/Men%C3%BCkarte%20Weihnachtsessen%20Abholung%202026%20-%20EdelNord.pdf"
+            target="_blank"
+            rel="noopener"
+          >
+            PDF öffnen
+          </a>
+          <a
+            class="btn"
+            href="assets/Men%C3%BCkarte%20Weihnachtsessen%20Abholung%202026%20-%20EdelNord.pdf"
+            download
+          >
+            Download
+          </a>
+        </div>
+      </div>
+
+      <object
+        class="pdf-view"
+        data="assets/Men%C3%BCkarte%20Weihnachtsessen%20Abholung%202026%20-%20EdelNord.pdf"
+        type="application/pdf"
+        aria-label="Weihnachtsbuffets Menü als PDF"
+      >
+        <div class="fallback">
+          Ihr Browser kann das PDF direkt nicht anzeigen.<br />
+          Bitte nutzen Sie den Download-Link oben, um das Menü zu öffnen.
+        </div>
+      </object>
+    </section>
+  </div>
+</body>
+</html>
