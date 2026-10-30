@@ -22,6 +22,11 @@
   text-align: center;
   margin: 0 auto 2.5rem;
 }
+.services-header .section-label,
+.services-header .section-title {
+  text-align: center;
+  display: block;
+}
 .services-grid {
   width: 100%;
   max-width: 1200px;
