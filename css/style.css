@@ -24,6 +24,11 @@
   box-sizing: border-box;
 }
 
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -102,10 +107,10 @@ nav {
 .nav-logo-text {
   display: flex;
   flex-direction: column;
-  line-height: 1;
+  line-height: 1.1;
 }
 
-.nav-logo-text span {
+.nav-logo-text span:first-child {
   color: var(--gold-light);
   font-family: var(--font-display);
   font-size: 0.92rem;
@@ -113,7 +118,9 @@ nav {
   text-transform: uppercase;
 }
 
-.nav-logo-text span:last-child {
+.nav-logo-text .logo-sub {
+  color: var(--gold-light);
+  font-family: var(--font-display);
   font-size: 0.76rem;
   letter-spacing: 0.14em;
   opacity: 0.9;
@@ -399,4 +406,63 @@ footer {
 
 .service-desc {
   font-size: 0.92rem;
-  font
+  font-weight: 300;
+  line-height: 1.75;
+  color: var(--white-dim);
+  max-width: 220px;
+  margin: 0;
+}
+
+.service-number {
+  position: absolute;
+  bottom: 1.4rem;
+  right: 1.4rem;
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(201, 148, 58, 0.06);
+  line-height: 1;
+  pointer-events: none;
+}
+
+.services-cta {
+  margin-top: 1.8rem;
+  text-align: center;
+}
+
+.offers {
+  background: #0b0b0b;
+  padding: 5rem 0;
+}
+
+.offers-header {
+  text-align: center;
+  margin: 0 auto 2.4rem;
+}
+
+.offer-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  width: min(100%, 760px);
+  margin: 0 auto 0.8rem;
+  padding: 1rem 1.3rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(201, 148, 58, 0.12);
+  color: var(--white);
+  transition: transform var(--transition), border-color var(--transition);
+}
+
+.offer-pill:hover {
+  transform: translateY(-2px);
+  border-color: rgba(201, 148, 58, 0.35);
+}
+
+.offer-icon {
+  font-size: 1.15rem;
+}
+
+.offer-name {
+  font-size: 1rem;
