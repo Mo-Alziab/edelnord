@@ -107,3 +107,51 @@
     grid-template-columns: 1fr;
   }
 }
+
+@media (max-width: 900px) {
+  html,
+  body {
+    background: #080808 !important;
+    color: #f9f5ee;
+    margin: 0;
+  }
+
+  body * {
+    box-sizing: border-box;
+  }
+
+  .page-wrap,
+  .main-wrapper,
+  .mobile-shell,
+  .site-shell,
+  #app,
+  nav,
+  .hero,
+  .services,
+  .offers,
+  .about,
+  .contact,
+  footer,
+  .section-inner,
+  .contact-inner {
+    background: #080808 !important;
+  }
+
+  .service-card,
+  .offer-pill,
+  .contact-form,
+  .contact-alt,
+  .about-image,
+  .about-body,
+  .footer-inner,
+  .footer-brand,
+  .footer-col {
+    background: #141414 !important;
+    border: 1px solid rgba(201, 148, 58, 0.12);
+  }
+
+  .service-card,
+  .offer-pill {
+    box-shadow: 0 0 0 1px rgba(201, 148, 58, 0.06);
+  }
+}
