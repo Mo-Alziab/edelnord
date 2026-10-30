@@ -317,12 +317,14 @@ footer {
   max-width: 1200px;
   text-align: center;
   margin: 0 auto 2.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .services-header .section-label,
 .services-header .section-title {
   text-align: center;
-  display: block;
 }
 
 .services-grid {
