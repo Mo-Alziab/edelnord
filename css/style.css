@@ -10,6 +10,7 @@
   --gold: #c9943a;
   --gold-bright: #e8c96d;
   --gold-light: #f5e4b0;
+  --gold-soft: #edd7a0;
   --white: #f9f5ee;
   --white-dim: rgba(249, 245, 238, 0.78);
   --line: rgba(201, 148, 58, 0.18);
@@ -72,15 +73,15 @@ nav {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  width: min(1230px, calc(100% - 2rem));
+  width: min(1280px, calc(100% - 2rem));
   margin: 1.2rem auto 0;
-  padding: 1rem 1.1rem;
+  padding: 1rem 1.15rem;
   background: rgba(8, 8, 8, 0.84);
   border: 1px solid var(--line);
   border-radius: 999px;
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
 }
 
 .nav-logo {
@@ -210,7 +211,7 @@ nav {
 .hero {
   position: relative;
   min-height: 78vh;
-  padding: 5.5rem 1.5rem 3.5rem;
+  padding: 6rem 1.5rem 4rem;
   background: var(--black);
   overflow: hidden;
 }
@@ -224,7 +225,7 @@ nav {
 
 .hero-bg {
   background:
-    radial-gradient(circle at 50% 28%, rgba(201, 148, 58, 0.14), transparent 36%),
+    radial-gradient(circle at 50% 28%, rgba(201, 148, 58, 0.15), transparent 35%),
     linear-gradient(180deg, rgba(8, 8, 8, 0.12), rgba(8, 8, 8, 0.02));
 }
 
@@ -232,7 +233,7 @@ nav {
   position: relative;
   z-index: 1;
   width: min(1200px, 100%);
-  min-height: 64vh;
+  min-height: 68vh;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -245,12 +246,12 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 1.4rem;
+  margin-bottom: 1.5rem;
 }
 
 .hero-logo img {
-  width: min(46vw, 540px);
-  max-width: 540px;
+  width: min(46vw, 620px);
+  max-width: 620px;
   filter: drop-shadow(0 18px 30px rgba(0, 0, 0, 0.25));
 }
 
@@ -259,11 +260,11 @@ nav {
   flex-direction: column;
   align-items: center;
   gap: 0.6rem;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
 }
 
 .hero-scroll span {
-  font-size: 0.66rem;
+  font-size: 0.68rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--white-dim);
@@ -276,7 +277,7 @@ nav {
 }
 
 .hero-actions {
-  margin-top: 1.8rem;
+  margin-top: 1.9rem;
 }
 
 /* ============================================
@@ -315,7 +316,7 @@ footer {
   width: 100%;
   max-width: 1200px;
   text-align: center;
-  margin: 0 auto 2.6rem;
+  margin: 0 auto 2.8rem;
 }
 
 .services-header .section-label,
@@ -339,8 +340,8 @@ footer {
   padding: 2.3rem 1.6rem 3rem;
   overflow: hidden;
   transition: var(--transition);
-  border-radius: 16px;
-  min-height: 320px;
+  border-radius: 18px;
+  min-height: 330px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -349,6 +350,7 @@ footer {
   text-decoration: none;
   color: inherit;
   border: 1px solid rgba(201, 148, 58, 0.12);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
 }
 
 .service-card::before {
@@ -370,7 +372,7 @@ footer {
 .service-card:hover {
   background: rgba(20, 20, 20, 0.97);
   transform: translateY(-10px);
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.18);
+  box-shadow: 0 22px 38px rgba(0, 0, 0, 0.18);
 }
 
 .service-card:hover .service-icon {
@@ -378,7 +380,7 @@ footer {
 }
 
 .service-icon {
-  font-size: 2rem;
+  font-size: 2.15rem;
   color: var(--gold);
   margin-bottom: 1rem;
   display: block;
@@ -387,7 +389,7 @@ footer {
 
 .service-name {
   font-family: var(--font-display);
-  font-size: clamp(1.7rem, 1.8vw, 2.1rem);
+  font-size: clamp(1.8rem, 2vw, 2.3rem);
   font-weight: 300;
   margin: 0 0 0.8rem;
   color: var(--white);
@@ -415,7 +417,7 @@ footer {
 }
 
 .services-cta {
-  margin-top: 1.75rem;
+  margin-top: 1.8rem;
   text-align: center;
 }
 
@@ -648,6 +650,11 @@ footer {
 .section-title,
 .about-title {
   font-size: clamp(3rem, 5vw, 5rem);
+  background: linear-gradient(135deg, var(--gold-light), var(--gold-bright), var(--gold));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 }
 
 .contact-title {
@@ -713,7 +720,7 @@ footer {
   }
 
   .service-name {
-    font-size: 2rem;
+    font-size: 2.15rem;
   }
 
   .service-desc {
