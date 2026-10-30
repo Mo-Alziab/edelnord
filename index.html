@@ -1,12 +1,15 @@
+Here is your fully updated and polished **`index.html`** file with all the necessary changes, fixes, and correct links applied:
+
+```html
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Edelnord Catering – Exklusives Catering für Events, Firmen und besondere Anlässe. Qualität, die man schmeckt." />
-  <title>EdelNord Catering </title>
-  <link rel="icon" type="image/png" href="assets/logo.png.png">
-<link rel="apple-touch-icon" href="assets/logo.png.png">
+  <title>EdelNord Catering</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
@@ -18,48 +21,47 @@
   <!-- ══════════════════════════════════════
        NAVIGATION
   ══════════════════════════════════════ -->
-<nav>
-  <a href="#home" class="nav-logo">
-    <img
-      src="assets/logo.jpg"
-      alt="EdelNord Catering Logo"
-      class="nav-logo-img"
-    >
-
-    <div class="nav-logo-text gold-text">
-      <span>EDELNORD</span>
-      <span>Catering</span>
-    </div>
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="#leistungen">Leistungen</a></li>
-    <li><a href="#angebote">Mittagstisch</a></li>
-    <li><a href="#ueber">Über uns</a></li>
-    <li>
-      <a href="#kontakt" class="nav-cta desktop-cta">
-        Anfrage stellen
-      </a>
-    </li>
-  </ul>
-
-  <div class="mobile-nav-actions">
-    <a href="#kontakt" class="mobile-request-btn">
-      Anfrage stellen
+  <nav>
+    <a href="#home" class="nav-logo">
+      <img
+        src="assets/logo.jpg"
+        alt="EdelNord Catering Logo"
+        class="nav-logo-img"
+      >
+      <div class="nav-logo-text gold-text">
+        <span>EDELNORD</span>
+        <span>Catering</span>
+      </div>
     </a>
 
-    <button
-      class="hamburger"
-      type="button"
-      aria-label="Menü öffnen"
-      aria-expanded="false"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-  </div>
-</nav>
+    <ul class="nav-links">
+      <li><a href="#leistungen">Leistungen</a></li>
+      <li><a href="#angebote">Mittagstisch</a></li>
+      <li><a href="#ueber">Über uns</a></li>
+      <li>
+        <a href="#kontakt" class="nav-cta desktop-cta">
+          Anfrage stellen
+        </a>
+      </li>
+    </ul>
+
+    <div class="mobile-nav-actions">
+      <a href="#kontakt" class="mobile-request-btn">
+        Anfrage stellen
+      </a>
+
+      <button
+        class="hamburger"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-expanded="false"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
 
   <!-- ══════════════════════════════════════
        HERO
@@ -68,21 +70,19 @@
     <div class="hero-bg"></div>
     <div class="hero-lines"></div>
     <div class="hero-content">
+      <div class="hero-logo">
+        <img src="assets/Slogan.PNG" alt="Edelnord Logo">
+      </div>
 
-  <div class="hero-logo">
-    <img src="assets/Slogan.PNG" alt="Edelnord Logo">
-  </div>
+      <div class="hero-scroll">
+        <span>Entdecken</span>
+        <div class="scroll-line"></div>
+      </div>
 
-  <div class="hero-scroll">
-    <span>Entdecken</span>
-    <div class="scroll-line"></div>
-  </div>
-
-  <div class="hero-actions">
-    <a href="#leistungen" class="btn-primary">Unser Angebot</a>
-  </div>
-
-</div>
+      <div class="hero-actions">
+        <a href="#leistungen" class="btn-primary">Unser Angebot</a>
+      </div>
+    </div>
   </section>
 
   <!-- ══════════════════════════════════════
@@ -92,7 +92,12 @@
     <div class="section-inner">
       <div class="services-header reveal">
         <span class="section-label">Unsere Leistungen</span>
-        <h2 class="section-title"><br><em style="font-style:italic; background: linear-gradient(135deg, var(--gold-deep), var(--gold-bright) 50%, var(--gold-deep)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Genuss vor Ort</em></h2>
+        <h2 class="section-title">
+          <br>
+          <em style="font-style:italic; background: linear-gradient(135deg, var(--gold-deep), var(--gold-bright) 50%, var(--gold-deep)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Genuss vor Ort
+          </em>
+        </h2>
         <div class="divider" style="justify-content:center;">
           <div class="divider-line"></div>
           <span class="divider-icon">✦</span>
@@ -101,45 +106,36 @@
       </div>
        
       <div class="services-grid">
-       
-          <a href="buffets.html" class="service-card reveal" data-delay="0">
+        <a href="buffets.html" class="service-card reveal" data-delay="0">
           <span class="service-icon">🍽️</span>
           <h3 class="service-name">Buffets</h3>
-          <p class="service-desc"> Vielfältige Buffetkonzepte – von klassisch bis modern. Mit einer großen Auswahl an Fleisch-, <span class="gold-text">vegetarischen und veganen Speisen</span>, perfekt abgestimmt auf jede Veranstaltung und jeden Geschmack.</p>
+          <p class="service-desc">Vielfältige Buffetkonzepte – von klassisch bis modern. Mit einer großen Auswahl an Fleisch-, <span class="gold-text">vegetarischen und veganen Speisen</span>, perfekt abgestimmt auf jede Veranstaltung und jeden Geschmack.</p>
           <span class="service-number">01</span>
-        
         </a>
 
-  
-
-        <div class="service-card reveal" data-delay="0.1">
+        <a href="weihnachtsbuffets.html" class="service-card reveal" data-delay="0.1" aria-label="Weihnachtsbuffets Seite öffnen">
           <span class="service-icon">🎄</span>
-          <h3 class="service-name">Weinachtsbuffets</h3>
-          <p class="service-desc">Geussvolle Weinachtsmenüs Mit Abholung</p>
+          <h3 class="service-name">Weihnachtsbuffets</h3>
+          <p class="service-desc">Genussvolle Weihnachtsmenüs mit Abholung</p>
           <span class="service-number">02</span>
-        </div>
+        </a>
+
         <a href="fingerfood.html" class="service-card reveal" data-delay="0.2">
-  <span class="service-icon">🍢</span>
-  <h3 class="service-name">Fingerfood</h3>
-  <p class="service-desc">Kleine, feine Spezialitäten – ideal für Empfänge, Meetings und Events. Kreativ, hochwertig und direkt servierbereit.</p>
-  <span class="service-number">03</span>
-</a>
-       <a href="tagung.html"
-   class="service-card reveal partner-card"
-   data-delay="0.3">
+          <span class="service-icon">🍢</span>
+          <h3 class="service-name">Fingerfood</h3>
+          <p class="service-desc">Kleine, feine Spezialitäten – ideal für Empfänge, Meetings und Events. Kreativ, hochwertig und direkt servierbereit.</p>
+          <span class="service-number">03</span>
+        </a>
 
-  <span class="service-icon">🏨</span>
-
-  <h3 class="service-name">Tagung</h3>
-
-  <p class="service-desc">
-    Tagungen über unseren Partner
-    <span class="gold-text">Hotel & Eventlocation  &amp; Adler</span>.
-  </p>
-
-  <span class="service-number">04</span>
-
-</a>
+        <a href="tagung.html" class="service-card reveal partner-card" data-delay="0.3">
+          <span class="service-icon">🏨</span>
+          <h3 class="service-name">Tagung</h3>
+          <p class="service-desc">
+            Tagungen über unseren Partner
+            <span class="gold-text">Hotel &amp; Eventlocation Adler</span>.
+          </p>
+          <span class="service-number">04</span>
+        </a>
       </div>
     </div>
   </section>
@@ -148,289 +144,178 @@
        ANGEBOTE
   ══════════════════════════════════════ -->
   <section id="angebote" class="offers">
-  <div class="section-inner">
-    <div class="offers-header reveal">
-      <span class="section-label">Mittagstisch</span>
-
-      <h2 class="section-title">
-        Weil gutes Essen<br>
-        <em style="font-style:italic; background: linear-gradient(135deg, var(--gold-deep), var(--gold-bright) 50%, var(--gold-deep)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">
-          Menschen verbindet.
-        </em>
-      </h2>
-
-      <div class="divider" style="justify-content:center; margin-top:1.5rem;">
-        <div class="divider-line"></div>
-        <span class="divider-icon">✦</span>
-        <div class="divider-line"></div>
-      </div>
-    </div>
-
-    <a href="fruehstueck.html" class="offer-pill reveal" data-delay="0">
-  <span class="offer-icon">🍳</span>
-  <span class="offer-name">Frühstück</span>
-</a>
-
-      <div class="offer-pill reveal" data-delay="0.1">
-        <span class="offer-icon">⚕️</span>
-        <span class="offer-name">Altenheime</span>
-      </div>
-
-      <div class="offer-pill reveal" data-delay="0.2">
-        <span class="offer-icon">🧒</span>
-        <span class="offer-name">Schulen & Kindergärten</span>
-      </div>
-
-      <div class="offer-pill reveal" data-delay="0.3">
-        <span class="offer-icon">🏢</span>
-        <span class="offer-name">Unternehmen</span>
-      </div>
-    </div>
-
-    <div class="offers-cta reveal" data-delay="0.4">
-      <p>
-        Wir bieten frischen Mittagstisch für Einrichtungen jeder Art.<br>
-        Ob Schulen, Kindergärten, Krankenhäuser oder Unternehmen –
-        wir liefern zuverlässig, abwechslungsreich und in bester Qualität.
-      </p>
-
-      <a href="#kontakt" class="btn-primary">Mittagstisch anfragen</a>
-    </div>
-  </div>
-</section>
-  <!-- ══════════════════════════════════════
-       WARUM EDELNORD
-
-  <section id="warum" class="why">
     <div class="section-inner">
-      <div class="why-layout">
-        <div class="why-text reveal">
-          <span class="section-label">Warum Edelnord Catering</span>
-          <h2 class="section-title">Qualität, die man sieht &amp; schmeckt</h2>
-          <p>Von der Auswahl der Zutaten bis zur finalen Umsetzung vor Ort stehen wir für ein Niveau, das überzeugt. Jedes Detail ist durchdacht, jedes Gericht mit Sorgfalt zubereitet.</p>
-          <div class="why-pillars">
-            <div class="pillar">
-              <span class="pillar-icon">✦</span>
-              <span class="pillar-name">Frisch zubereitet</span>
-            </div>
-            <div class="pillar">
-              <span class="pillar-icon">✦</span>
-              <span class="pillar-name">Hochwertige Zutaten</span>
-            </div>
-            <div class="pillar">
-              <span class="pillar-icon">✦</span>
-              <span class="pillar-name">Zuverlässiger Service</span>
-            </div>
-            <div class="pillar">
-              <span class="pillar-icon">✦</span>
-              <span class="pillar-name">Individuelle Planung</span>
-            </div>
-          </div>
-        </div>
-        <div class="why-visual reveal" data-delay="0.2">
-          <div class="why-visual-inner">
-            <span class="why-visual-monogram">E</span>
-            <div class="why-visual-label">
-              <span>Est. Norddeutschland</span>
-              <strong>EDELNORD CATERING</strong>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
- ══════════════════════════════════════ -->
-  <!-- ══════════════════════════════════════
-       IMPRESSIONEN
+      <div class="offers-header reveal">
+        <span class="section-label">Mittagstisch</span>
 
-  <section id="impressionen" class="impressions">
-    <div class="section-inner">
-      <div class="impressions-header reveal">
-        <span class="section-label">Genuss & Impressionen</span>
-        <h2 class="section-title">Optisch wie geschmacklich<br><em style="font-style:italic;">ein Erlebnis</em></h2>
+        <h2 class="section-title">
+          Weil gutes Essen<br>
+          <em style="font-style:italic; background: linear-gradient(135deg, var(--gold-deep), var(--gold-bright) 50%, var(--gold-deep)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;">
+            Menschen verbindet.
+          </em>
+        </h2>
+
         <div class="divider" style="justify-content:center; margin-top:1.5rem;">
           <div class="divider-line"></div>
           <span class="divider-icon">✦</span>
           <div class="divider-line"></div>
         </div>
-        <p style="max-width:500px; margin:0 auto; font-size:0.8rem; color:var(--white-dim); font-weight:300; line-height:1.9;">
-          Unsere Speisen werden mit Sorgfalt und Anspruch zubereitet, um jedem Event das passende kulinarische Erlebnis zu bieten.
-        </p>
       </div>
-      <div class="gallery-grid reveal" data-delay="0.1">
-        <div class="gallery-item">
-          <div class="gallery-bg">
-            <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">🍽️</span>
-            </div>
-          </div>
-          <div class="gallery-item-inner">
-            <span class="gallery-label">Buffet Arrangements</span>
-          </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+        <a href="fruehstueck.html" class="offer-pill reveal" data-delay="0">
+          <span class="offer-icon">🍳</span>
+          <span class="offer-name">Frühstück</span>
+        </a>
+
+        <div class="offer-pill reveal" data-delay="0.1">
+          <span class="offer-icon">⚕️</span>
+          <span class="offer-name">Altenheime</span>
         </div>
-        <div class="gallery-item">
-          <div class="gallery-bg">
-            <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">🔥</span>
-            </div>
-          </div>
-          <div class="gallery-item-inner">
-            <span class="gallery-label">BBQ & Grill Live</span>
-          </div>
+
+        <div class="offer-pill reveal" data-delay="0.2">
+          <span class="offer-icon">🧒</span>
+          <span class="offer-name">Schulen &amp; Kindergärten</span>
         </div>
-        <div class="gallery-item">
-          <div class="gallery-bg">
-            <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">🍢</span>
-            </div>
-          </div>
-          <div class="gallery-item-inner">
-            <span class="gallery-label">Fingerfood Kreationen</span>
-          </div>
+
+        <div class="offer-pill reveal" data-delay="0.3">
+          <span class="offer-icon">🏢</span>
+          <span class="offer-name">Unternehmen</span>
         </div>
-        <div class="gallery-item">
-          <div class="gallery-bg">
-            <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">☕</span>
-            </div>
-          </div>
-          <div class="gallery-item-inner">
-            <span class="gallery-label">Tagungen & Meetings</span>
-          </div>
-        </div>
-        <div class="gallery-item">
-          <div class="gallery-bg">
-            <div class="gallery-placeholder">
-              <span class="gallery-placeholder-icon">⭐</span>
-            </div>
-          </div>
-          <div class="gallery-item-inner">
-            <span class="gallery-label">Premium Qualität</span>
-          </div>
-        </div>
+      </div>
+
+      <div class="offers-cta reveal" data-delay="0.4">
+        <p>
+          Wir bieten frischen Mittagstisch für Einrichtungen jeder Art.<br>
+          Ob Schulen, Kindergärten, Krankenhäuser oder Unternehmen –
+          wir liefern zuverlässig, abwechslungsreich und in bester Qualität.
+        </p>
+
+        <a href="#kontakt" class="btn-primary">Mittagstisch anfragen</a>
       </div>
     </div>
   </section>
-  ══════════════════════════════════════ -->
 
   <!-- ══════════════════════════════════════
        ÜBER UNS
   ══════════════════════════════════════ -->
   <section id="ueber" class="about">
-  <div class="section-inner">
-    <div class="about-layout">
+    <div class="section-inner">
+      <div class="about-layout">
 
-      <div class="about-body reveal">
-        <span class="section-label about-tag">Über uns</span>
+        <div class="about-body reveal">
+          <span class="section-label about-tag">Über uns</span>
 
-        <h2 class="about-title">
-          EDELNORD CATERING<br>
-          <em style="font-style:italic; background: linear-gradient(135deg, var(--gold-deep), var(--gold-bright) 50%, var(--gold-deep)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-            Genuss vor Ort
-          </em>
-        </h2>
+          <h2 class="about-title">
+            EDELNORD CATERING<br>
+            <em style="font-style:italic; background: linear-gradient(135deg, var(--gold-deep), var(--gold-bright) 50%, var(--gold-deep)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+              Genuss vor Ort
+            </em>
+          </h2>
 
-        <p>Kennengelernt haben wir uns während unserer Ausbildung als Köche. Nach unserer Ausbildung sammelten wir in verschiedenen gastronomischen Betrieben wertvolle Erfahrungen und entwickelten unser handwerkliches Können stetig weiter.</p>
+          <p>Kennengelernt haben wir uns während unserer Ausbildung als Köche. Nach unserer Ausbildung sammelten wir in verschiedenen gastronomischen Betrieben wertvolle Erfahrungen und entwickelten unser handwerkliches Können stetig weiter.</p>
 
-        <p>Die gemeinsame Leidenschaft für gutes Essen, Qualität und Gastfreundschaft führte schließlich zur Gründung von EdelNord Catering.</p>
+          <p>Die gemeinsame Leidenschaft für gutes Essen, Qualität und Gastfreundschaft führte schließlich zur Gründung von EdelNord Catering.</p>
 
-        <p>Heute stehen wir für frische Zutaten, handwerkliche Qualität und zuverlässigen Service. Ob Hochzeit, Firmenfeier, Geburtstag oder Familienfest – unser Ziel ist es, besondere Momente mit gutem Essen und professionellem Catering zu begleiten.</p>
+          <p>Heute stehen wir für frische Zutaten, handwerkliche Qualität und zuverlässigen Service. Ob Hochzeit, Firmenfeier, Geburtstag oder Familienfest – unser Ziel ist es, besondere Momente mit gutem Essen und professionellem Catering zu begleiten.</p>
 
-        <p class="about-signature">Mit Liebe zubereitet. Mit Freude serviert.</p>
+          <p class="about-signature">Mit Liebe zubereitet. Mit Freude serviert.</p>
+        </div>
+
+        <div class="about-image reveal" data-delay="0.2">
+          <img src="assets/ueberuns.jpeg" alt="EdelNord Catering Über uns">
+        </div>
+
       </div>
-
-      <div class="about-image reveal" data-delay="0.2">
-        <img src="assets/ueberuns.jpeg" alt="EdelNord Catering Über uns">
-      </div>
-
     </div>
-  </div>
-</section>
+  </section>
+
   <!-- ══════════════════════════════════════
        KONTAKT
   ══════════════════════════════════════ -->
- <section id="kontakt" class="contact">
-  <div class="contact-inner">
-    <span class="contact-pretitle reveal">Kontakt</span>
+  <section id="kontakt" class="contact">
+    <div class="contact-inner">
+      <span class="contact-pretitle reveal">Kontakt</span>
 
-    <h2 class="contact-title reveal">
-      Sie planen ein<br>
-      <em style="font-style:italic; background: linear-gradient(135deg, var(--gold-deep), var(--gold-bright) 50%, var(--gold-deep)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
-        besonderes Event?
-      </em>
-    </h2>
+      <h2 class="contact-title reveal">
+        Sie planen ein<br>
+        <em style="font-style:italic; background: linear-gradient(135deg, var(--gold-deep), var(--gold-bright) 50%, var(--gold-deep)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+          besonderes Event?
+        </em>
+      </h2>
 
-    <p class="contact-body reveal">
-      Wir erstellen Ihnen gerne ein individuelles und unverbindliches Angebot – persönlich, zuverlässig und auf Ihre Bedürfnisse zugeschnitten.
-    </p>
+      <p class="contact-body reveal">
+        Wir erstellen Ihnen gerne ein individuelles und unverbindliches Angebot – persönlich, zuverlässig und auf Ihre Bedürfnisse zugeschnitten.
+      </p>
 
-    <form
-      class="contact-form reveal"
-      data-delay="0.1"
-      action="https://formspree.io/f/mzdlvapv"
-      method="POST">
+      <form
+        class="contact-form reveal"
+        data-delay="0.1"
+        action="https://formspree.io/f/mzdlvapv"
+        method="POST">
 
-      <div class="form-row">
-        <div class="form-field">
-          <label for="name">Name</label>
-          <input type="text" id="name" name="Name" placeholder="Ihr vollständiger Name" autocomplete="name" required>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="Name" placeholder="Ihr vollständiger Name" autocomplete="name" required>
+          </div>
+
+          <div class="form-field">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" name="E-Mail" placeholder="ihre@email.de" autocomplete="email" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="telefon">Telefon</label>
+            <input type="tel" id="telefon" name="Telefon" placeholder="+49 …" autocomplete="tel">
+          </div>
+
+          <div class="form-field">
+            <label for="leistung">Gewünschte Leistung</label>
+            <select id="leistung" name="Leistung">
+              <option value="">Bitte wählen…</option>
+              <option>Buffet</option>
+              <option>Weihnachtsbuffets</option>
+              <option>Fingerfood</option>
+              <option>Tagung</option>
+              <option>Mittagstisch</option>
+              <option>Kombination / Sonstiges</option>
+            </select>
+          </div>
         </div>
 
         <div class="form-field">
-          <label for="email">E-Mail</label>
-          <input type="email" id="email" name="E-Mail" placeholder="ihre@email.de" autocomplete="email" required>
-        </div>
-      </div>
-
-      <div class="form-row">
-        <div class="form-field">
-          <label for="telefon">Telefon</label>
-          <input type="tel" id="telefon" name="Telefon" placeholder="+49 …" autocomplete="tel">
+          <label for="nachricht">Ihre Nachricht</label>
+          <textarea id="nachricht" name="Nachricht" placeholder="Erzählen Sie uns von Ihrem Event – Datum, Personenzahl, Wünsche …" required></textarea>
         </div>
 
-        <div class="form-field">
-          <label for="leistung">Gewünschte Leistung</label>
-          <select id="leistung" name="Leistung">
-            <option value="">Bitte wählen…</option>
-            <option>Buffet</option>
-            <option>Weinachtsbuffets</option>
-            <option>Fingerfood</option>
-            <option>Tagung</option>
-            <option>Mittagstisch</option>
-            <option>Kombination / Sonstiges</option>
-          </select>
+        <button type="submit" class="form-submit">
+          Anfrage senden
+        </button>
+
+        <p class="form-status" aria-live="polite"></p>
+      </form>
+
+      <div class="contact-alt reveal" data-delay="0.3">
+        <div class="contact-alt-item">
+          <span>Telefon</span>
+          <a href="tel:+491715187229">+49 171 518 7229</a>
         </div>
-      </div>
 
-      <div class="form-field">
-        <label for="nachricht">Ihre Nachricht</label>
-        <textarea id="nachricht" name="Nachricht" placeholder="Erzählen Sie uns von Ihrem Event – Datum, Personenzahl, Wünsche …" required></textarea>
-      </div>
-<button type="submit" class="form-submit">
-  Anfrage senden
-</button>
+        <div class="contact-alt-item">
+          <span>E-Mail</span>
+          <a href="mailto:Info@EdelNordCatering.de">Info@EdelNordCatering.de</a>
+        </div>
 
-<p class="form-status" aria-live="polite"></p>
-    </form>
-
-    <div class="contact-alt reveal" data-delay="0.3">
-      <div class="contact-alt-item">
-        <span>Telefon</span>
-        <a href="tel:+49 171 518 7229 ">+49 171 518 7229 </a>
-      </div>
-
-      <div class="contact-alt-item">
-        <span>E-Mail</span>
-        <a href="mailto:Info@EdelNordCatering.de">Info@EdelNordCatering.de</a>
-      </div>
-
-      <div class="contact-alt-item">
-        <span>Adresse</span>
-        <span>Lindenstraße 72, 25524 Itzehoe</span>
+        <div class="contact-alt-item">
+          <span>Adresse</span>
+          <span>Lindenstraße 72, 25524 Itzehoe</span>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- ══════════════════════════════════════
        FOOTER
@@ -448,7 +333,7 @@
         <h4>Leistungen</h4>
         <ul>
           <li><a href="#leistungen">Buffets</a></li>
-          <li><a href="#leistungen">Weinachtsbuffets</a></li>
+          <li><a href="#leistungen">Weihnachtsbuffets</a></li>
           <li><a href="#leistungen">Fingerfood</a></li>
           <li><a href="#leistungen">Tagung</a></li>
           <li><a href="#angebote">Mittagstisch</a></li>
@@ -458,7 +343,6 @@
         <h4>Unternehmen</h4>
         <ul>
           <li><a href="#ueber">Über uns</a></li>
-      
           <li><a href="#kontakt">Kontakt</a></li>
         </ul>
       </div>
@@ -467,7 +351,7 @@
       <p>&copy; 2026 EdelNord Catering GbR · Alle Rechte vorbehalten</p>
       <div style="display:flex; gap:2rem;">
         <a href="impressum.html">Impressum</a>
-<a href="datenschutz.html">Datenschutz</a>
+        <a href="datenschutz.html">Datenschutz</a>
       </div>
     </div>
   </footer>
@@ -475,3 +359,5 @@
   <script src="js/main.js"></script>
 </body>
 </html>
+
+```
