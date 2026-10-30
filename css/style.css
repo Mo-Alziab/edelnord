@@ -871,8 +871,10 @@ footer {
 
   .services-grid {
     grid-template-columns: 1fr;
-    gap: 0.9rem;
     width: 100%;
+    max-width: 100%;
+    gap: 0.9rem;
+    margin: 0 auto;
   }
 
   .service-card {
@@ -880,6 +882,7 @@ footer {
     padding: 1.4rem 1.15rem;
     border-radius: 12px;
     background: #141414;
+    width: 100%;
   }
 
   .service-icon {
