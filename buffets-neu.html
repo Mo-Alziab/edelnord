@@ -3,212 +3,233 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Entdecken Sie die Buffet-Auswahl von EdelNord Catering.">
-  <title>Buffets – EdelNord Catering</title>
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Entdecken Sie unsere exklusiven Buffets von EdelNord Catering – Klassisch, Norddeutsch, Mediterran, Orientalisch, Grill & BBQ sowie individuelle Wunschmenüs.">
+  <title>Unsere Buffets – EdelNord Catering</title>
   <link rel="icon" type="image/png" href="assets/logo.png">
   <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/buffets.css">
+  <style>
+    /* Zusätzliches Styling für Karussell, Lightbox & neue Elemente */
+    .buffet-intro-box {
+      background: rgba(20, 20, 20, 0.85);
+      border: 1px solid rgba(201, 148, 58, 0.3);
+      border-radius: 14px;
+      padding: 1.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .buffet-intro-box h2 {
+      font-family: var(--font-display);
+      color: var(--gold-light);
+      font-size: 1.8rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+    }
+    .buffet-intro-box p {
+      color: var(--white-dim);
+      font-size: 1rem;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Karussell Styles */
+    .media-carousel-container {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      padding: 0.5rem 0;
+    }
+    .media-carousel-track {
+      display: flex;
+      gap: 1rem;
+      animation: scrollTrack 30s linear infinite;
+      width: max-content;
+    }
+    .media-carousel-container:hover .media-carousel-track {
+      animation-play-state: paused;
+    }
+    .carousel-item {
+      width: 280px;
+      height: 180px;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid rgba(201, 148, 58, 0.3);
+      cursor: pointer;
+      flex-shrink: 0;
+      position: relative;
+      background: #000;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .carousel-item:hover {
+      transform: scale(1.03);
+      border-color: var(--gold);
+    }
+    .carousel-item img, .carousel-item video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+
+    @keyframes scrollTrack {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 0.5rem)); }
+    }
+
+    /* Lightbox Styles */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .lightbox-modal.active {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 8px;
+      border: 2px solid var(--gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: var(--gold-light);
+      font-size: 2.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* Buffet Grid & Cards */
+    .buffet-content-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    .buffet-category {
+      background: rgba(20, 20, 20, 0.7);
+      border: 1px solid rgba(201, 148, 58, 0.2);
+      border-radius: 14px;
+      padding: 1.5rem;
+    }
+    .buffet-category h3 {
+      font-family: var(--font-display);
+      color: var(--gold-light);
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(201, 148, 58, 0.15);
+      padding-bottom: 0.4rem;
+    }
+    .buffet-category ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .buffet-category li {
+      color: var(--white-dim);
+      font-size: 0.92rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .buffet-category li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.75rem;
+      top: 0.1rem;
+    }
+    .buffet-panel {
+      display: none;
+    }
+    .buffet-panel.active {
+      display: block;
+      animation: fadeIn 0.4s ease forwards;
+    }
+    .price-badge {
+      display: inline-block;
+      background: rgba(201, 148, 58, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 0.5rem 1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.05em;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Eigener Cursor für Desktop -->
   <div class="cursor"></div>
   <div class="cursor-ring"></div>
 
   <section class="buffet-page">
 
-    <!--
-      Auf dem Desktop steht hier „Home“.
-      Auf dem Handy wird daraus automatisch ein kleiner Pfeil.
-    -->
-    <a
-      href="index.html"
-      class="home-btn"
-      aria-label="Zurück zur Startseite"
-    >
-      Home
-    </a>
+    <!-- Top Action Buttons -->
+    <div style="position: absolute; top: 20px; right: 30px; display: flex; gap: 1rem; z-index: 100;">
+      <a href="index.html" class="home-btn" style="position: static;">Home</a>
+      <a href="index.html#kontakt" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Anfragen</a>
+    </div>
 
     <div class="buffet-container">
 
-      <!-- =====================================
-           LINKE SEITE / DESKTOP
-           ===================================== -->
+      <!-- ================= SIDEBAR (DESKTOP) ================= -->
       <aside class="buffet-sidebar">
-
         <div class="buffet-logo">
-          <img
-            src="assets/Slogan.PNG"
-            alt="EdelNord Catering"
-          >
+          <img src="assets/Slogan.PNG" alt="EdelNord Catering">
         </div>
 
-        <!-- Buffet-Buttons nur auf Desktop -->
         <div class="buffet-tabs" aria-label="Buffet auswählen">
-
-          <button
-            type="button"
-            class="buffet-tab active"
-            data-buffet="0"
-          >
-            Klassisches Buffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="1"
-          >
-            Norddeutsches Buffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="2"
-          >
-            Mediterranes Buffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="3"
-          >
-            Orientalisches Buffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="4"
-          >
-            Grillbuffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="5"
-          >
-            BBQ Premium Buffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="6"
-          >
-            Sommerliches Grillbuffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="7"
-          >
-            Genussbuffet
-          </button>
-
+          <button type="button" class="buffet-tab active" data-target="buffet-1">Klassisches Buffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
         </div>
 
-        <!-- Album -->
-        <div class="side-album">
-          <img
-            id="side-album-image"
-            src="assets/album1.jpg"
-            alt="Buffet Impression"
-          >
-        </div>
-
-        <!-- Anfrage Desktop -->
-        <a
-          href="index.html#kontakt"
-          class="buffet-cta"
-        >
+        <a href="index.html#kontakt" class="buffet-cta">
           Anfrage stellen
         </a>
-
       </aside>
 
 
-      <!-- =====================================
-           MENÜBEREICH
-           ===================================== -->
-      <main class="menu-section">
+      <!-- ================= HAUPTBEREICH / SPEISEKARTE ================= -->
+      <main class="menu-section" style="padding: 2rem; overflow-y: auto; max-height: 90vh;">
 
-        <!-- Nur auf dem Handy sichtbar -->
-        <div class="mobile-slider-header">
-
-          <button
-            type="button"
-            id="prev-buffet"
-            class="slider-arrow"
-            aria-label="Vorheriges Buffet"
-          >
-            &#10094;
-          </button>
-
-          <h1 id="mobile-buffet-title">
-            Klassisches Buffet
-          </h1>
-
-          <button
-            type="button"
-            id="next-buffet"
-            class="slider-arrow"
-            aria-label="Nächstes Buffet"
-          >
-            &#10095;
-          </button>
-
+        <!-- Einleitungstext -->
+        <div class="buffet-intro-box">
+          <h2>Erlesene Vielfalt für jeden Anlass</h2>
+          <p>Wählen Sie aus unseren 8 edlen Buffetvorschlägen oder stellen Sie sich ganz unkompliziert Ihr individuelles Wunschmenü für Ihre Feier oder Ihr Event zusammen. Wir beraten Sie gerne persönlich!</p>
         </div>
 
-        <!-- Buffet-Menübild -->
-        <div class="menu-area">
-
-          <img
-            id="buffet-image"
-            src="assets/buffet/buffet1.png"
-            alt="Klassisches Buffet"
-            draggable="false"
-          >
-
-        </div>
-
-        <!-- Nur auf dem Handy sichtbar -->
-        <div class="mobile-indicator">
-
-          <span id="buffet-counter">
-            1 / 8
-          </span>
-
-          <span class="swipe-hint">
-            Nach links oder rechts wischen
-          </span>
-
-        </div>
-
-        <!-- Anfrage-Button speziell für die mobile Ansicht -->
-        <div class="mobile-cta-wrapper">
-          <a
-            href="index.html#kontakt"
-            class="btn-primary mobile-buffet-cta"
-          >
-            Anfrage stellen
-          </a>
-        </div>
-
-      </main>
-
-    </div>
-
-  </section>
-
-  <script src="js/main.js"></script>
-  <script src="js/buffets.js"></script>
-
-</body>
-</html>
+        <!-- Durchlaufendes Medien-Karussell (Bilder & Videos) -->
+        <div class="media-carousel-container">
+          <div class
