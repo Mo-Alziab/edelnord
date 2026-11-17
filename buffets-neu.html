@@ -45,7 +45,7 @@
     .media-carousel-track {
       display: flex;
       gap: 1rem;
-      animation: scrollTrack 30s linear infinite;
+      animation: scrollTrack 35s linear infinite;
       width: max-content;
     }
     .media-carousel-container:hover .media-carousel-track {
@@ -67,7 +67,7 @@
       transform: scale(1.03);
       border-color: var(--gold);
     }
-    .carousel-item img, .carousel-item video {
+    .carousel-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
@@ -114,12 +114,28 @@
       border: none;
     }
 
+    /* Seitenverhältnisse der Sidebar-Buttons optimiert für längere Texte */
+    .buffet-tab {
+      width: 100%;
+      min-height: 58px;
+      padding: 0.6rem 0.8rem;
+      font-size: 0.88rem;
+      line-height: 1.25;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      word-break: break-word;
+    }
+
     /* Buffet Grid & Cards */
     .buffet-content-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
       margin-top: 1.5rem;
+      margin-bottom: 2rem;
     }
     .buffet-category {
       background: rgba(20, 20, 20, 0.7);
@@ -169,13 +185,41 @@
       background: rgba(201, 148, 58, 0.15);
       border: 1px solid var(--gold);
       color: var(--gold-light);
-      padding: 0.5rem 1rem;
+      padding: 0.6rem 1.2rem;
       border-radius: 999px;
       font-weight: 600;
       font-size: 0.95rem;
       margin-bottom: 1.2rem;
       letter-spacing: 0.05em;
+      text-align: center;
     }
+    
+    /* PDF Download Button Styling */
+    .pdf-download-container {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 2rem;
+    }
+    .btn-pdf-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #c9943a, #e2b15c);
+      color: #111;
+      padding: 0.8rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(201, 148, 58, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .btn-pdf-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 148, 58, 0.5);
+      background: linear-gradient(135deg, #d8a346, #ecc16d);
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
@@ -227,273 +271,337 @@
         <!-- Einleitungstext -->
         <div class="buffet-intro-box">
           <h2>Erlesene Vielfalt für jeden Anlass</h2>
-          <p>Wählen Sie aus unseren acht edlen Buffetvorschlägen oder stellen Sie sich ganz unkompliziert Ihr individuelles Wunschmenü für Ihren Anlass zusammen. Wir beraten Sie gerne persönlich!</p>
+          <p>Wählen Sie aus unseren 8 edlen Buffetvorschlägen oder stellen Sie sich ganz unkompliziert Ihr individuelles Wunschmenü für Ihre Feier oder Ihr Event zusammen. Wir beraten Sie gerne persönlich!</p>
         </div>
 
-        <!-- Durchlaufendes Medien-Karussell (Bilder & Videos) -->
+        <!-- Durchlaufendes Medien-Karussell mit allen 8 echten Fotos -->
         <div class="media-carousel-container">
           <div class="media-carousel-track">
-            <div class="carousel-item"><img src="assets/buffet1.jpg" alt="Buffet Impression 1"></div>
-            <div class="carousel-item"><img src="assets/buffet2.jpg" alt="Buffet Impression 2"></div>
-            <div class="carousel-item"><img src="assets/buffet3.jpg" alt="Buffet Impression 3"></div>
-            <div class="carousel-item"><img src="assets/buffet4.jpg" alt="Buffet Impression 4"></div>
-            <!-- Duplikat für nahtlose Endlosschleife -->
-            <div class="carousel-item"><img src="assets/buffet1.jpg" alt="Buffet Impression 1"></div>
-            <div class="carousel-item"><img src="assets/buffet2.jpg" alt="Buffet Impression 2"></div>
-            <div class="carousel-item"><img src="assets/buffet3.jpg" alt="Buffet Impression 3"></div>
-            <div class="carousel-item"><img src="assets/buffet4.jpg" alt="Buffet Impression 4"></div>
+            <div class="carousel-item"><img src="assets/B004 Warme Speisen.jpg" alt="Warme Speisen"></div>
+            <div class="carousel-item"><img src="assets/B017 Fingerfood.jpg" alt="Fingerfood"></div>
+            <div class="carousel-item"><img src="assets/B002 Salate und Dips.jpg" alt="Salate und Dips"></div>
+            <div class="carousel-item"><img src="assets/B003 Gasgrill.jpg" alt="Gasgrill"></div>
+            <div class="carousel-item"><img src="assets/B009 Buffet Gäste.jpg" alt="Buffet Gäste"></div>
+            <div class="carousel-item"><img src="assets/B014 Dessert.jpg" alt="Dessert"></div>
+            <div class="carousel-item"><img src="assets/B018 Kuchen.jpg" alt="Kuchen"></div>
+            <div class="carousel-item"><img src="assets/B019 Holzkohlegrill.jpg" alt="Holzkohlegrill"></div>
+            <!-- Duplikat-Set für nahtlose Endlosschleife -->
+            <div class="carousel-item"><img src="assets/B004 Warme Speisen.jpg" alt="Warme Speisen"></div>
+            <div class="carousel-item"><img src="assets/B017 Fingerfood.jpg" alt="Fingerfood"></div>
+            <div class="carousel-item"><img src="assets/B002 Salate und Dips.jpg" alt="Salate und Dips"></div>
+            <div class="carousel-item"><img src="assets/B003 Gasgrill.jpg" alt="Gasgrill"></div>
+            <div class="carousel-item"><img src="assets/B009 Buffet Gäste.jpg" alt="Buffet Gäste"></div>
+            <div class="carousel-item"><img src="assets/B014 Dessert.jpg" alt="Dessert"></div>
+            <div class="carousel-item"><img src="assets/B018 Kuchen.jpg" alt="Kuchen"></div>
+            <div class="carousel-item"><img src="assets/B019 Holzkohlegrill.jpg" alt="Holzkohlegrill"></div>
           </div>
         </div>
 
-        <!-- Buffet Panels Container (Inklusive Netto-Preise) -->
+        <!-- Buffet Panels Container -->
         <div class="buffet-panels-wrapper">
           
           <!-- 1. Klassisches Buffet -->
           <div id="buffet-1" class="buffet-panel active">
-            <span class="price-badge">Buffet Preis netto pro Person ab: 29,50 €</span>
+            <div style="text-align: center;">
+              <span class="price-badge">Klassisches Buffet – Buffet Preis netto pro Person ab: 29,50 €</span>
+            </div>
             <div class="buffet-content-grid">
               <div class="buffet-category">
                 <h3>Vorspeisen</h3>
                 <ul>
-                  <li>Baguette mit gesalzener Butter und Kräuterdip[cite: 1]</li>
-                  <li>Antipasti aus mariniertem Gemüse mit Balsamico und Knoblauch[cite: 1]</li>
-                  <li>Rucolasalat mit Oliven, getrockneten Tomaten, Sprossen und Parmesan[cite: 1]</li>
+                  <li>Baguette mit gesalzener Butter und Kräuterdip</li>
+                  <li>Antipasti aus mariniertem Gemüse mit Balsamico und Knoblauch</li>
+                  <li>Rucolasalat mit Oliven, getrockneten Tomaten, Sprossen und Parmesan</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Hauptgänge</h3>
                 <ul>
-                  <li>Rinderbraten in Rosmarinjus[cite: 1]</li>
-                  <li>Geschmorter Schweinenackenbraten mit Kräuterjus[cite: 1]</li>
+                  <li>Rinderbraten in Rosmarinjus</li>
+                  <li>Geschmorter Schweinenackenbraten mit Kräuterjus</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Beilagen & Dessert</h3>
                 <ul>
-                  <li>Rosmarinkartoffeln[cite: 1]</li>
-                  <li>Mediterranes Grillgemüse[cite: 1]</li>
-                  <li>Panna cotta mit Beerensauce im Glas[cite: 1]</li>
+                  <li>Rosmarinkartoffeln</li>
+                  <li>Mediterranes Grillgemüse</li>
+                  <li>Panna cotta mit Beerensauce im Glas</li>
                 </ul>
               </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_1_Klassisches_Buffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
             </div>
           </div>
 
           <!-- 2. Norddeutsches Buffet -->
           <div id="buffet-2" class="buffet-panel">
-            <span class="price-badge">Buffet Preis netto pro Person ab: 33,50 €</span>
+            <div style="text-align: center;">
+              <span class="price-badge">Norddeutsches Buffet – Buffet Preis netto pro Person ab: 33,50 €</span>
+            </div>
             <div class="buffet-content-grid">
               <div class="buffet-category">
                 <h3>Vorspeisen</h3>
                 <ul>
-                  <li>Gemischter Brotkorb mit Mango-Aioli und gesalzener Butter[cite: 2]</li>
-                  <li>Penne rigate mit Avocado, Limette und Rucola[cite: 2]</li>
-                  <li>Blattsalat mit Gurke, Mais, Paprika, Croutons und Balsamico-Dressing[cite: 2]</li>
+                  <li>Gemischter Brotkorb mit Mango-Aioli und gesalzener Butter</li>
+                  <li>Penne rigate mit Avocado, Limette und Rucola</li>
+                  <li>Blattsalat mit Gurke, Mais, Paprika, Croutons und Balsamico-Dressing</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Hauptgänge</h3>
                 <ul>
-                  <li>Gedämpftes Dorschfilet mit Gemüsestreifen und Dijon-Senfsauce[cite: 2]</li>
-                  <li>Rinderbraten mit Schwarzbiersauce[cite: 2]</li>
+                  <li>Gedämpftes Dorschfilet mit Gemüsestreifen und Dijon-Senfsauce</li>
+                  <li>Rinderbraten mit Schwarzbiersauce</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Beilagen & Dessert</h3>
                 <ul>
-                  <li>Speckbohnen, Erbsen und Blumenkohl[cite: 2]</li>
-                  <li>Kartoffelgratin[cite: 2]</li>
-                  <li>Rote Grütze mit Vanillesauce[cite: 2]</li>
+                  <li>Speckbohnen, Erbsen und Blumenkohl</li>
+                  <li>Kartoffelgratin</li>
+                  <li>Rote Grütze mit Vanillesauce</li>
                 </ul>
               </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_2_Norddeutsches_Buffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
             </div>
           </div>
 
           <!-- 3. Mediterranes Buffet -->
           <div id="buffet-3" class="buffet-panel">
-            <span class="price-badge">Buffet Preis netto pro Person ab: 33,50 €</span>
+            <div style="text-align: center;">
+              <span class="price-badge">Mediterranes Buffet – Buffet Preis netto pro Person ab: 33,50 €</span>
+            </div>
             <div class="buffet-content-grid">
               <div class="buffet-category">
                 <h3>Vorspeisen</h3>
                 <ul>
-                  <li>Hausgebackene Kräuter-Focaccia[cite: 3]</li>
-                  <li>Gesalzene Butter und Sour Cream[cite: 3]</li>
-                  <li>Rote Bete und Feldsalat mit Vinaigrette und Walnüssen[cite: 3]</li>
-                  <li>Spinat-Räucherlachs-Törtchen im Glas mit Crème fraîche[cite: 3]</li>
+                  <li>Hausgebackene Kräuter-Focaccia</li>
+                  <li>Gesalzene Butter und Sour Cream</li>
+                  <li>Rote Bete und Feldsalat mit Vinaigrette und Walnüssen</li>
+                  <li>Spinat-Räucherlachs-Törtchen im Glas mit Crème fraîche</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Hauptgänge</h3>
                 <ul>
-                  <li>Hähnchenbrust in Salbei-Parmaschinken-Sauce[cite: 3]</li>
-                  <li>Gebratene Mittelmeerfische und Garnelen auf Blattspinat-Tomaten-Gemüse mit Gorgonzolasauce[cite: 3]</li>
+                  <li>Hähnchenbrust in Salbei-Parmaschinken-Sauce</li>
+                  <li>Gebratene Mittelmeerfische und Garnelen auf Blattspinat-Tomaten-Gemüse mit Gorgonzolasauce</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Beilagen & Dessert</h3>
                 <ul>
-                  <li>Rosmarinkartoffeln[cite: 3]</li>
-                  <li>Gegrilltes Gemüse[cite: 3]</li>
-                  <li>Tiramisù mit Amarenakirschen[cite: 3]</li>
+                  <li>Rosmarinkartoffeln</li>
+                  <li>Gegrilltes Gemüse</li>
+                  <li>Tiramisù mit Amarenakirschen</li>
                 </ul>
               </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_3_Mediterranes_Buffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
             </div>
           </div>
 
           <!-- 4. Orientalisches Buffet -->
           <div id="buffet-4" class="buffet-panel">
-            <span class="price-badge">Buffet Preis netto pro Person ab: 29,50 €</span>
+            <div style="text-align: center;">
+              <span class="price-badge">Orientalisches Buffet – Buffet Preis netto pro Person ab: 29,50 €</span>
+            </div>
             <div class="buffet-content-grid">
               <div class="buffet-category">
                 <h3>Brotauswahl & Dips</h3>
                 <ul>
-                  <li>Hausgebackene Kräuter-Focaccia[cite: 4]</li>
-                  <li>Hummus & Baba Ghanoush[cite: 4]</li>
+                  <li>Hausgebackene Kräuter-Focaccia</li>
+                  <li>Hummus & Baba Ghanoush</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Vorspeisen & Hauptgänge</h3>
                 <ul>
-                  <li>Fattoush-Salat mit geröstetem Fladenbrot und Zitronen-Sumach-Dressing[cite: 4]</li>
-                  <li>Geschmorte Hähnchenkeulen mit Zwiebeln[cite: 4]</li>
-                  <li>Geschmortes Lammfleisch in Joghurtsauce[cite: 4]</li>
+                  <li>Fattoush-Salat mit geröstetem Fladenbrot und Zitronen-Sumach-Dressing</li>
+                  <li>Geschmorte Hähnchenkeulen mit Zwiebeln</li>
+                  <li>Geschmortes Lammfleisch in Joghurtsauce</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Beilagen & Dessert</h3>
                 <ul>
-                  <li>Biryani-Reis[cite: 4]</li>
-                  <li>Gebratener Blumenkohl mit Sesamsauce[cite: 4]</li>
-                  <li>Kunafa mit Käse[cite: 4]</li>
+                  <li>Biryani-Reis</li>
+                  <li>Gebratener Blumenkohl mit Sesamsauce</li>
+                  <li>Kunafa mit Käse</li>
                 </ul>
               </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_4_Orientalisches_Buffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
             </div>
           </div>
 
           <!-- 5. Grillbuffet -->
           <div id="buffet-5" class="buffet-panel">
-            <span class="price-badge">Buffet Preis netto pro Person ab: 36,50 €</span>
+            <div style="text-align: center;">
+              <span class="price-badge">Grillbuffet – Buffet Preis netto pro Person ab: 36,50 €</span>
+            </div>
             <div class="buffet-content-grid">
               <div class="buffet-category">
                 <h3>Brot & Dips / Vorspeisen</h3>
                 <ul>
-                  <li>Ciabatta und Sauerteigbrot[cite: 5]</li>
-                  <li>Chimichurri, BBQ-Sauce und Aufgeschlagene Salzbutter[cite: 5]</li>
-                  <li>Grüner Blattsalat mit Balsamico-Dressing[cite: 5]</li>
-                  <li>Wassermelonensalat mit Feta, Minze und Rucola[cite: 5]</li>
+                  <li>Ciabatta und Sauerteigbrot</li>
+                  <li>Chimichurri, BBQ-Sauce und Aufgeschlagene Salzbutter</li>
+                  <li>Grüner Blattsalat mit Balsamico-Dressing</li>
+                  <li>Wassermelonensalat mit Feta, Minze und Rucola</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Vom Grill</h3>
                 <ul>
-                  <li>Rinderhüftsteaks[cite: 5]</li>
-                  <li>Zanderfilet vom Grill auf Lauch und Kirschtomaten mit Limettenbutter[cite: 5]</li>
-                  <li>Gegrillte Portobello-Pilze mit Knoblauch[cite: 5]</li>
+                  <li>Rinderhüftsteaks</li>
+                  <li>Zanderfilet vom Grill auf Lauch und Kirschtomaten mit Limettenbutter</li>
+                  <li>Gegrillte Portobello-Pilze mit Knoblauch</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Beilagen & Dessert</h3>
                 <ul>
-                  <li>Ofenkartoffeln mit geräucherter Paprika und Meersalz[cite: 5]</li>
-                  <li>Gegrillte Zucchini und Paprika mit Balsamico[cite: 5]</li>
-                  <li>Cheesecake im Glas mit Beerensauce[cite: 5]</li>
+                  <li>Ofenkartoffeln mit geräucherter Paprika und Meersalz</li>
+                  <li>Gegrillte Zucchini und Paprika mit Balsamico</li>
+                  <li>Cheesecake im Glas mit Beerensauce</li>
                 </ul>
               </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_5_Grillbuffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
             </div>
           </div>
 
           <!-- 6. Sommerliches Grillbuffet -->
           <div id="buffet-6" class="buffet-panel">
-            <span class="price-badge">Buffet Preis netto pro Person ab: 36,50 €</span>
+            <div style="text-align: center;">
+              <span class="price-badge">Sommerliches Grillbuffet – Buffet Preis netto pro Person ab: 36,50 €</span>
+            </div>
             <div class="buffet-content-grid">
               <div class="buffet-category">
                 <h3>Brot & Dips / Salate</h3>
                 <ul>
-                  <li>Ciabatta und Baguette[cite: 6]</li>
-                  <li>Rote-Bete-Hummus und Aufgeschlagene Kräuterbutter[cite: 6]</li>
-                  <li>Couscous-Salat mit Tomaten, Minze und Petersilie[cite: 6]</li>
-                  <li>Bauernsalat mit Gurke, Kirschtomaten, Paprika und Zitronendressing[cite: 6]</li>
+                  <li>Ciabatta und Baguette</li>
+                  <li>Rote-Bete-Hummus und Aufgeschlagene Kräuterbutter</li>
+                  <li>Couscous-Salat mit Tomaten, Minze und Petersilie</li>
+                  <li>Bauernsalat mit Gurke, Kirschtomaten, Paprika und Zitronendressing</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Vom Grill</h3>
                 <ul>
-                  <li>Maispoulardenbrust in Zitronen-Kräuter-Marinade[cite: 6]</li>
-                  <li>Riesengarnelenspieße mit Knoblauch und Petersilie[cite: 6]</li>
-                  <li>Halloumi-Spieße mit Paprika und roten Zwiebeln[cite: 6]</li>
+                  <li>Maispoulardenbrust in Zitronen-Kräuter-Marinade</li>
+                  <li>Riesengarnelenspieße mit Knoblauch und Petersilie</li>
+                  <li>Halloumi-Spieße mit Paprika und roten Zwiebeln</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Beilagen & Dessert</h3>
                 <ul>
-                  <li>Kartoffelsalat mit Basilikumpesto[cite: 6]</li>
-                  <li>Gegrillte Maiskolben mit Butter und Meersalz[cite: 6]</li>
-                  <li>Zitronenquark mit frischen Erdbeeren im Glas[cite: 6]</li>
+                  <li>Kartoffelsalat mit Basilikumpesto</li>
+                  <li>Gegrillte Maiskolben mit Butter und Meersalz</li>
+                  <li>Zitronenquark mit frischen Erdbeeren im Glas</li>
                 </ul>
               </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_6_Sommerliches_Grillbuffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
             </div>
           </div>
 
           <!-- 7. BBQ Premium Buffet -->
           <div id="buffet-7" class="buffet-panel">
-            <span class="price-badge">Buffet Preis netto pro Person ab: 39,50 €</span>
+            <div style="text-align: center;">
+              <span class="price-badge">BBQ Premium Buffet – Buffet Preis netto pro Person ab: 39,50 €</span>
+            </div>
             <div class="buffet-content-grid">
               <div class="buffet-category">
                 <h3>Brot & Dips / Salate</h3>
                 <ul>
-                  <li>Knuspriges Baguette und Sauerteigbrot mit Fenchel-Kräuterquark & Tomatenbutter[cite: 7]</li>
-                  <li>BBQ-Sauce, Senf und Ketchup[cite: 7]</li>
-                  <li>Bohnensalat mit roten Zwiebeln, Petersilie und getrockneten Tomaten[cite: 7]</li>
-                  <li>Pastasalat mit Pesto, Mini-Mozzarella und Pinienkernen[cite: 7]</li>
+                  <li>Knuspriges Baguette und Sauerteigbrot mit Fenchel-Kräuterquark & Tomatenbutter</li>
+                  <li>BBQ-Sauce, Senf und Ketchup</li>
+                  <li>Bohnensalat mit roten Zwiebeln, Petersilie und getrockneten Tomaten</li>
+                  <li>Pastasalat mit Pesto, Mini-Mozzarella und Pinienkernen</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Grillspezialitäten</h3>
                 <ul>
-                  <li>Thüringer Bratwurst[cite: 7]</li>
-                  <li>Schweinenackensteaks in Senf-Kräuter-Marinade[cite: 7]</li>
-                  <li>Marinierte, ausgelöste Hähnchenkeulen[cite: 7]</li>
-                  <li>Lachsfilet mit Zitronenbutter[cite: 7]</li>
+                  <li>Thüringer Bratwurst</li>
+                  <li>Schweinenackensteaks in Senf-Kräuter-Marinade</li>
+                  <li>Marinierte, ausgelöste Hähnchenkeulen</li>
+                  <li>Lachsfilet mit Zitronenbutter</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Beilagen & Dessert</h3>
                 <ul>
-                  <li>Kartoffeln mit Rosmarin, Thymian, Meersalz und Olivenöl[cite: 7]</li>
-                  <li>Gebratene Champignons mit Knoblauch und Kräutern[cite: 7]</li>
-                  <li>Schokoladenbrownie mit Salzkaramellsauce[cite: 7]</li>
+                  <li>Kartoffeln mit Rosmarin, Thymian, Meersalz und Olivenöl</li>
+                  <li>Gebratene Champignons mit Knoblauch und Kräutern</li>
+                  <li>Schokoladenbrownie mit Salzkaramellsauce</li>
                 </ul>
               </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_7_BBQ_Premium_Buffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
             </div>
           </div>
 
           <!-- 8. EdelNord Genussbuffet -->
           <div id="buffet-8" class="buffet-panel">
-            <span class="price-badge">Buffet Preis netto pro Person ab: 39,50 €</span>
+            <div style="text-align: center;">
+              <span class="price-badge">EdelNord Genussbuffet – Buffet Preis netto pro Person ab: 39,50 €</span>
+            </div>
             <div class="buffet-content-grid">
               <div class="buffet-category">
                 <h3>Brot & Vorspeisen</h3>
                 <ul>
-                  <li>Baguette und hausgebackene Kräuter-Focaccia mit Salzbutter & Aioli[cite: 8]</li>
-                  <li>Geräuchertes Forellenfilet auf Fenchelsalat mit Zitrone, Dill und Meerrettichcreme[cite: 8]</li>
-                  <li>Feldsalat mit Birne, gerösteten Walnüssen und Senf-Dill-Vinaigrette[cite: 8]</li>
+                  <li>Baguette und hausgebackene Kräuter-Focaccia mit Salzbutter & Aioli</li>
+                  <li>Geräuchertes Forellenfilet auf Fenchelsalat mit Zitrone, Dill und Meerrettichcreme</li>
+                  <li>Feldsalat mit Birne, gerösteten Walnüssen und Senf-Dill-Vinaigrette</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Hauptgänge</h3>
                 <ul>
-                  <li>Rosa gebratenes Rinderfilet mit kräftiger Rotweinjus[cite: 8]</li>
-                  <li>Ausgelöste Hähnchenkeulen in Zitronen-Thymian-Jus[cite: 8]</li>
-                  <li>Süßkartoffel-Spinat-Curry (vegan)[cite: 8]</li>
+                  <li>Rosa gebratenes Rinderfilet mit kräftiger Rotweinjus</li>
+                  <li>Ausgelöste Hähnchenkeulen in Zitronen-Thymian-Jus</li>
+                  <li>Süßkartoffel-Spinat-Curry (vegan)</li>
                 </ul>
               </div>
               <div class="buffet-category">
                 <h3>Beilagen & Dessert</h3>
                 <ul>
-                  <li>Buntes Landgemüse mit Möhren, grünen Bohnen und Erbsen[cite: 8]</li>
-                  <li>Basmatireis[cite: 8]</li>
-                  <li>Mousse au Chocolat aus Zartbitterschokolade[cite: 8]</li>
+                  <li>Buntes Landgemüse mit Möhren, grünen Bohnen und Erbsen</li>
+                  <li>Basmatireis</li>
+                  <li>Mousse au Chocolat aus Zartbitterschokolade</li>
                 </ul>
               </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_8_EdelNord_Genussbuffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
             </div>
           </div>
 
