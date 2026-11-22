@@ -235,7 +235,7 @@
     .pdf-download-container {
       text-align: center;
       margin-top: 1rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
     .btn-pdf-download {
       display: inline-flex;
@@ -257,6 +257,11 @@
       background: linear-gradient(135deg, #d8a346, #ecc16d);
     }
 
+    /* Mobile Buffet-Kacheln unter dem PDF-Button (auf Desktop ausgeblendet) */
+    .mobile-buffet-tabs {
+      display: none;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
@@ -268,6 +273,48 @@
         max-height: none !important;
         overflow-y: visible !important;
         padding: 0.5rem 0.25rem !important;
+      }
+
+      .menu-section .media-carousel-container {
+        min-height: 150px !important;
+        margin-top: 0.8rem !important;
+        margin-bottom: 1.2rem !important;
+      }
+
+      .menu-section .media-carousel-track,
+      .menu-section .carousel-item {
+        height: 135px !important;
+        min-height: 135px !important;
+        max-height: 135px !important;
+      }
+
+      .menu-section .carousel-item {
+        width: 210px !important;
+      }
+
+      .buffet-title-row {
+        margin-top: 1.4rem;
+        margin-bottom: 1rem;
+      }
+
+      .price-badge {
+        font-size: 0.85rem;
+        padding: 0.55rem 1rem;
+      }
+
+      .mobile-buffet-tabs {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.55rem;
+        margin-top: 1.1rem;
+        margin-bottom: 1.4rem;
+      }
+
+      .mobile-buffet-tabs .buffet-tab {
+        min-height: 48px;
+        height: auto;
+        font-size: 0.68rem;
+        padding: 0.45rem 0.5rem;
       }
     }
   </style>
@@ -381,6 +428,16 @@
                 📥 Buffet-PDF herunterladen
               </a>
             </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab active" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
           </div>
 
           <!-- 2. Norddeutsches Buffet -->
@@ -417,6 +474,16 @@
               <a href="assets/EdelNord_Buffet_2_Norddeutsches_Buffet.pdf" class="btn-pdf-download" target="_blank">
                 📥 Buffet-PDF herunterladen
               </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
             </div>
           </div>
 
@@ -456,6 +523,16 @@
                 📥 Buffet-PDF herunterladen
               </a>
             </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
           </div>
 
           <!-- 4. Orientalisches Buffet -->
@@ -492,6 +569,16 @@
               <a href="assets/EdelNord_Buffet_4_Orientalisches_Buffet.pdf" class="btn-pdf-download" target="_blank">
                 📥 Buffet-PDF herunterladen
               </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
             </div>
           </div>
 
@@ -532,6 +619,16 @@
                 📥 Buffet-PDF herunterladen
               </a>
             </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
           </div>
 
           <!-- 6. Sommerliches Grillbuffet -->
@@ -570,6 +667,16 @@
               <a href="assets/EdelNord_Buffet_6_Sommerliches_Grillbuffet.pdf" class="btn-pdf-download" target="_blank">
                 📥 Buffet-PDF herunterladen
               </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
             </div>
           </div>
 
@@ -611,6 +718,16 @@
                 📥 Buffet-PDF herunterladen
               </a>
             </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
           </div>
 
           <!-- 8. EdelNord Genussbuffet -->
@@ -649,6 +766,16 @@
                 📥 Buffet-PDF herunterladen
               </a>
             </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
           </div>
 
         </div>
@@ -670,16 +797,30 @@
     const tabs = document.querySelectorAll('.buffet-tab');
     const panels = document.querySelectorAll('.buffet-panel');
 
+    function activateBuffet(targetId, shouldScrollMobile = false) {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      panels.forEach(p => p.classList.remove('active'));
+      target.classList.add('active');
+
+      tabs.forEach(t => {
+        t.classList.toggle('active', t.getAttribute('data-target') === targetId);
+      });
+
+      if (shouldScrollMobile && window.innerWidth <= 900) {
+        const titleRow = target.querySelector('.buffet-title-row');
+        if (titleRow) {
+          titleRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+
     tabs.forEach(tab => {
       tab.addEventListener('click', () => {
-        tabs.forEach(t => t.classList.remove('active'));
-        panels.forEach(p => p.classList.remove('active'));
-
-        tab.classList.add('active');
-        const target = document.getElementById(tab.getAttribute('data-target'));
-        if (target) {
-          target.classList.add('active');
-        }
+        const targetId = tab.getAttribute('data-target');
+        const isMobileTab = Boolean(tab.closest('.mobile-buffet-tabs'));
+        activateBuffet(targetId, isMobileTab);
       });
     });
 
