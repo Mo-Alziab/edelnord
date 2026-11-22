@@ -2,200 +2,837 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
-  <meta
-    name="description"
-    content="Entdecken Sie die Buffet-Auswahl von EdelNord Catering."
-  >
-
-  <title>Buffets – EdelNord Catering</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="description" content="Entdecken Sie unsere exklusiven Buffets von EdelNord Catering – Klassisch, Norddeutsch, Mediterran, Orientalisch, Grill & BBQ sowie individuelle Wunschmenüs.">
+  <title>Unsere Buffets – EdelNord Catering</title>
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="apple-touch-icon" href="assets/logo.png">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/buffets.css">
+  <style>
+    /* Hauptbereich entkoppeln, damit Flexbox das Karussell nicht zusammenschiebt */
+    .buffet-container .menu-section {
+      display: block !important;
+      width: 100% !important;
+      height: calc(100svh - 2.4rem) !important;
+      max-height: calc(100svh - 2.4rem) !important;
+      overflow-y: auto !important;
+      overflow-x: hidden !important;
+      padding: 1.4rem 2rem 2.5rem !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Zusätzliches Styling für Karussell, Lightbox & neue Elemente */
+    .buffet-intro-box {
+      background: rgba(20, 20, 20, 0.85);
+      border: 1px solid rgba(201, 148, 58, 0.3);
+      border-radius: 14px;
+      padding: 1.4rem 1.8rem;
+      margin-bottom: 1.8rem;
+      text-align: center;
+    }
+    .buffet-intro-box h2 {
+      font-family: var(--font-display);
+      color: var(--gold-light);
+      font-size: 1.7rem;
+      margin-top: 0;
+      margin-bottom: 0.6rem;
+    }
+    .buffet-intro-box p {
+      color: var(--white-dim);
+      font-size: 0.96rem;
+      line-height: 1.55;
+      margin: 0;
+    }
+
+    /* Karussell Styles – gezielt mit hoher Spezifität abgesichert */
+    .menu-section .media-carousel-container {
+      position: relative !important;
+      width: 100% !important;
+      height: auto !important;
+      min-height: 185px !important;
+      max-height: none !important;
+      overflow-x: hidden !important;
+      overflow-y: visible !important;
+      margin-top: 1.2rem !important;
+      margin-bottom: 1.8rem !important;
+      padding: 0.6rem 0 !important;
+      box-sizing: border-box !important;
+    }
+    .menu-section .media-carousel-track {
+      display: flex !important;
+      align-items: center !important;
+      gap: 1rem !important;
+      height: 170px !important;
+      animation: scrollTrack 35s linear infinite;
+      width: max-content !important;
+    }
+    .menu-section .media-carousel-container:hover .media-carousel-track {
+      animation-play-state: paused;
+    }
+    .menu-section .carousel-item {
+      width: 260px !important;
+      height: 170px !important;
+      min-height: 170px !important;
+      max-height: 170px !important;
+      border-radius: 10px !important;
+      overflow: hidden !important;
+      border: 1px solid rgba(201, 148, 58, 0.3) !important;
+      cursor: pointer !important;
+      flex-shrink: 0 !important;
+      position: relative !important;
+      background: #000 !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .menu-section .carousel-item:hover {
+      transform: scale(1.03);
+      border-color: var(--gold) !important;
+    }
+    .menu-section .carousel-item img {
+      display: block !important;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 100% !important;
+      max-height: 100% !important;
+      object-fit: cover !important;
+      object-position: center !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      pointer-events: none;
+    }
+
+    @keyframes scrollTrack {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-50% - 0.5rem)); }
+    }
+
+    /* Lightbox Styles */
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.92);
+      z-index: 9999;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem;
+    }
+    .lightbox-modal.active {
+      display: flex;
+    }
+    .lightbox-content {
+      max-width: 90%;
+      max-height: 85vh;
+      border-radius: 8px;
+      border: 2px solid var(--gold);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+    }
+    .lightbox-close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      color: var(--gold-light);
+      font-size: 2.5rem;
+      cursor: pointer;
+      background: none;
+      border: none;
+    }
+
+    /* Seitenverhältnisse & Schriftgröße der Sidebar-Buttons optimiert */
+    .buffet-tab {
+      width: 100%;
+      min-height: 54px;
+      padding: 0.5rem 0.65rem;
+      font-size: 0.72rem;
+      line-height: 1.25;
+      letter-spacing: 0.03em;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      word-break: normal;
+      overflow-wrap: normal;
+      hyphens: none;
+    }
+
+    /* Buffet Grid & eigene Kästchen für Beilagen und Desserts */
+    .menu-section .buffet-content-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
+      gap: 1.5rem !important;
+      margin-top: 1.2rem !important;
+      margin-bottom: 2rem !important;
+      align-items: stretch !important;
+    }
+    .menu-section .buffet-category {
+      display: flex !important;
+      flex-direction: column !important;
+      background: rgba(20, 20, 20, 0.7) !important;
+      border: 1px solid rgba(201, 148, 58, 0.2) !important;
+      border-radius: 14px !important;
+      padding: 1.5rem !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .buffet-category h3 {
+      font-family: var(--font-display);
+      color: var(--gold-light);
+      font-size: 1.4rem;
+      margin-top: 0;
+      margin-bottom: 0.8rem;
+      border-bottom: 1px solid rgba(201, 148, 58, 0.15);
+      padding-bottom: 0.4rem;
+    }
+    .buffet-category ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .buffet-category li {
+      color: var(--white-dim);
+      font-size: 0.92rem;
+      margin-bottom: 0.6rem;
+      line-height: 1.5;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    .buffet-category li::before {
+      content: "✦";
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.75rem;
+      top: 0.1rem;
+    }
+    .buffet-panel {
+      display: none;
+    }
+    .buffet-panel.active {
+      display: block !important;
+      animation: fadeIn 0.4s ease forwards;
+    }
+
+    /* Preis pro Person auf Desktop & Mobil zuverlässig sichtbar */
+    .menu-section .buffet-title-row {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      text-align: center !important;
+      margin-top: 2.2rem !important;
+      margin-bottom: 1.4rem !important;
+    }
+    .menu-section .price-badge {
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      background: rgba(201, 148, 58, 0.15);
+      border: 1px solid var(--gold);
+      color: var(--gold-light);
+      padding: 0.65rem 1.4rem;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+
+    /* PDF Download Button Styling */
+    .pdf-download-container {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .btn-pdf-download {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #c9943a, #e2b15c);
+      color: #111;
+      padding: 0.8rem 1.8rem;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      box-shadow: 0 4px 15px rgba(201, 148, 58, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    }
+    .btn-pdf-download:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(201, 148, 58, 0.5);
+      background: linear-gradient(135deg, #d8a346, #ecc16d);
+    }
+
+    /* Mobile Buffet-Kacheln unter dem PDF-Button (auf Desktop ausgeblendet) */
+    .mobile-buffet-tabs {
+      display: none;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 900px) {
+      .buffet-container .menu-section {
+        height: auto !important;
+        max-height: none !important;
+        overflow-y: visible !important;
+        padding: 0.5rem 0.25rem !important;
+      }
+
+      .menu-section .buffet-content-grid {
+        grid-template-columns: 1fr !important;
+      }
+
+      .menu-section .media-carousel-container {
+        min-height: 150px !important;
+        margin-top: 0.8rem !important;
+        margin-bottom: 1.2rem !important;
+      }
+
+      .menu-section .media-carousel-track,
+      .menu-section .carousel-item {
+        height: 135px !important;
+        min-height: 135px !important;
+        max-height: 135px !important;
+      }
+
+      .menu-section .carousel-item {
+        width: 210px !important;
+      }
+
+      .menu-section .buffet-title-row {
+        margin-top: 1.4rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .menu-section .price-badge {
+        font-size: 0.85rem;
+        padding: 0.55rem 1rem;
+      }
+
+      .mobile-buffet-tabs {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.55rem;
+        margin-top: 1.1rem;
+        margin-bottom: 1.4rem;
+      }
+
+      .mobile-buffet-tabs .buffet-tab {
+        min-height: 48px;
+        height: auto;
+        font-size: 0.68rem;
+        padding: 0.45rem 0.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-  <!-- Eigener Cursor für Desktop -->
   <div class="cursor"></div>
   <div class="cursor-ring"></div>
 
   <section class="buffet-page">
 
-    <!--
-      Auf dem Desktop steht hier „Home“.
-      Auf dem Handy wird daraus automatisch ein kleiner Pfeil.
-    -->
-    <a
-      href="index.html"
-      class="home-btn"
-      aria-label="Zurück zur Startseite"
-    >
-      Home
-    </a>
+    <!-- Top Action Buttons -->
+    <div style="position: absolute; top: 20px; right: 30px; display: flex; gap: 1rem; z-index: 100;">
+      <a href="index.html" class="home-btn" style="position: static;">Home</a>
+      <a href="index.html#kontakt" class="btn-primary" style="padding: 0.6rem 1.2rem; font-size: 0.9rem;">Anfragen</a>
+    </div>
 
     <div class="buffet-container">
 
-      <!-- =====================================
-           LINKE SEITE / DESKTOP
-           ===================================== -->
+      <!-- ================= SIDEBAR (DESKTOP) ================= -->
       <aside class="buffet-sidebar">
-
         <div class="buffet-logo">
-          <img
-            src="assets/Slogan.PNG"
-            alt="EdelNord Catering"
-          >
+          <img src="assets/Slogan.PNG" alt="EdelNord Catering">
         </div>
 
-        <!-- Buffet-Buttons nur auf Desktop -->
         <div class="buffet-tabs" aria-label="Buffet auswählen">
-
-          <button
-            type="button"
-            class="buffet-tab active"
-            data-buffet="0"
-          >
-            Klassisches Buffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="1"
-          >
-            Norddeutsches Buffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="2"
-          >
-            Mediterranes Buffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="3"
-          >
-            Orientalisches Buffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="4"
-          >
-            Grillbuffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="5"
-          >
-            BBQ Premium Buffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="6"
-          >
-            Sommerliches Grillbuffet
-          </button>
-
-          <button
-            type="button"
-            class="buffet-tab"
-            data-buffet="7"
-          >
-            Genussbuffet
-          </button>
-
+          <button type="button" class="buffet-tab active" data-target="buffet-1">Klassisches Buffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+          <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
         </div>
 
-        <!-- Album -->
-        <div class="side-album">
-          <img
-            id="side-album-image"
-            src="assets/album1.jpg"
-            alt="Buffet Impression"
-          >
-        </div>
-
-        <!-- Anfrage -->
-        <a
-          href="index.html#kontakt"
-          class="buffet-cta"
-        >
+        <a href="index.html#kontakt" class="buffet-cta">
           Anfrage stellen
         </a>
-
       </aside>
 
 
-      <!-- =====================================
-           MENÜBEREICH
-           ===================================== -->
+      <!-- ================= HAUPTBEREICH / SPEISEKARTE ================= -->
       <main class="menu-section">
 
-        <!-- Nur auf dem Handy sichtbar -->
-        <div class="mobile-slider-header">
-
-          <button
-            type="button"
-            id="prev-buffet"
-            class="slider-arrow"
-            aria-label="Vorheriges Buffet"
-          >
-            &#10094;
-          </button>
-
-          <h1 id="mobile-buffet-title">
-            Klassisches Buffet
-          </h1>
-
-          <button
-            type="button"
-            id="next-buffet"
-            class="slider-arrow"
-            aria-label="Nächstes Buffet"
-          >
-            &#10095;
-          </button>
-
+        <!-- Einleitungstext -->
+        <div class="buffet-intro-box">
+          <h2>Erlesene Vielfalt für jeden Anlass</h2>
+          <p>Wählen Sie aus unseren 8 edlen Buffetvorschlägen oder stellen Sie sich ganz unkompliziert Ihr individuelles Wunschmenü für Ihre Feier oder Ihr Event zusammen. Wir beraten Sie gerne persönlich!</p>
         </div>
 
-        <!-- Buffet-Menübild -->
-        <div class="menu-area">
-
-          <img
-            id="buffet-image"
-            src="assets/buffet/buffet1.png"
-            alt="Klassisches Buffet"
-            draggable="false"
-          >
-
+        <!-- Durchlaufendes Medien-Karussell mit allen 8 echten Fotos -->
+        <div class="media-carousel-container">
+          <div class="media-carousel-track">
+            <div class="carousel-item"><img src="assets/B004 Warme Speisen.jpg" alt="Warme Speisen"></div>
+            <div class="carousel-item"><img src="assets/B017 Fingerfood.jpeg" alt="Fingerfood"></div>
+            <div class="carousel-item"><img src="assets/B002 Salate und Dips.jpg" alt="Salate und Dips"></div>
+            <div class="carousel-item"><img src="assets/B003 Gasgrill.jpg" alt="Gasgrill"></div>
+            <div class="carousel-item"><img src="assets/B009 Buffet Gäste.jpg" alt="Buffet Gäste"></div>
+            <div class="carousel-item"><img src="assets/B014 Dessert.jpg" alt="Dessert"></div>
+            <div class="carousel-item"><img src="assets/B018 Kuchen.jpg" alt="Kuchen"></div>
+            <div class="carousel-item"><img src="assets/B019 Holzkohlegrill.jpg" alt="Holzkohlegrill"></div>
+            <!-- Duplikat-Set für nahtlose Endlosschleife -->
+            <div class="carousel-item"><img src="assets/B004 Warme Speisen.jpg" alt="Warme Speisen"></div>
+            <div class="carousel-item"><img src="assets/B017 Fingerfood.jpeg" alt="Fingerfood"></div>
+            <div class="carousel-item"><img src="assets/B002 Salate und Dips.jpg" alt="Salate und Dips"></div>
+            <div class="carousel-item"><img src="assets/B003 Gasgrill.jpg" alt="Gasgrill"></div>
+            <div class="carousel-item"><img src="assets/B009 Buffet Gäste.jpg" alt="Buffet Gäste"></div>
+            <div class="carousel-item"><img src="assets/B014 Dessert.jpg" alt="Dessert"></div>
+            <div class="carousel-item"><img src="assets/B018 Kuchen.jpg" alt="Kuchen"></div>
+            <div class="carousel-item"><img src="assets/B019 Holzkohlegrill.jpg" alt="Holzkohlegrill"></div>
+          </div>
         </div>
 
-        <!-- Nur auf dem Handy sichtbar -->
-        <div class="mobile-indicator">
+        <!-- Buffet Panels Container -->
+        <div class="buffet-panels-wrapper">
 
-          <span id="buffet-counter">
-            1 / 8
-          </span>
+          <!-- 1. Klassisches Buffet -->
+          <div id="buffet-1" class="buffet-panel active">
+            <div class="buffet-title-row">
+              <span class="price-badge">Klassisches Buffet – Preis pro Person ab: 29,50 € (Netto)</span>
+            </div>
+            <div class="buffet-content-grid">
+              <div class="buffet-category">
+                <h3>Vorspeisen</h3>
+                <ul>
+                  <li>Baguette mit gesalzener Butter und Kräuterdip</li>
+                  <li>Antipasti aus mariniertem Gemüse mit Balsamico und Knoblauch</li>
+                  <li>Rucolasalat mit Oliven, getrockneten Tomaten, Sprossen und Parmesan</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Hauptgänge</h3>
+                <ul>
+                  <li>Rinderbraten in Rosmarinjus</li>
+                  <li>Geschmorter Schweinenackenbraten mit Kräuterjus</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Beilagen</h3>
+                <ul>
+                  <li>Rosmarinkartoffeln</li>
+                  <li>Mediterranes Grillgemüse</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Desserts</h3>
+                <ul>
+                  <li>Panna cotta mit Beerensauce im Glas</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_1_Klassisches_Buffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab active" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
+          </div>
 
-          <span class="swipe-hint">
-            Nach links oder rechts wischen
-          </span>
+          <!-- 2. Norddeutsches Buffet -->
+          <div id="buffet-2" class="buffet-panel">
+            <div class="buffet-title-row">
+              <span class="price-badge">Norddeutsches Buffet – Preis pro Person ab: 33,50 € (Netto)</span>
+            </div>
+            <div class="buffet-content-grid">
+              <div class="buffet-category">
+                <h3>Vorspeisen</h3>
+                <ul>
+                  <li>Gemischter Brotkorb mit Mango-Aioli und gesalzener Butter</li>
+                  <li>Penne rigate mit Avocado, Limette und Rucola</li>
+                  <li>Blattsalat mit Gurke, Mais, Paprika, Croutons und Balsamico-Dressing</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Hauptgänge</h3>
+                <ul>
+                  <li>Gedämpftes Dorschfilet mit Gemüsestreifen und Dijon-Senfsauce</li>
+                  <li>Rinderbraten mit Schwarzbiersauce</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Beilagen</h3>
+                <ul>
+                  <li>Speckbohnen, Erbsen und Blumenkohl</li>
+                  <li>Kartoffelgratin</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Desserts</h3>
+                <ul>
+                  <li>Rote Grütze mit Vanillesauce</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_2_Norddeutsches_Buffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
+          </div>
+
+          <!-- 3. Mediterranes Buffet -->
+          <div id="buffet-3" class="buffet-panel">
+            <div class="buffet-title-row">
+              <span class="price-badge">Mediterranes Buffet – Preis pro Person ab: 33,50 € (Netto)</span>
+            </div>
+            <div class="buffet-content-grid">
+              <div class="buffet-category">
+                <h3>Vorspeisen</h3>
+                <ul>
+                  <li>Hausgebackene Kräuter-Focaccia</li>
+                  <li>Gesalzene Butter und Sour Cream</li>
+                  <li>Rote Bete und Feldsalat mit Vinaigrette und Walnüssen</li>
+                  <li>Spinat-Räucherlachs-Törtchen im Glas mit Crème fraîche</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Hauptgänge</h3>
+                <ul>
+                  <li>Hähnchenbrust in Salbei-Parmaschinken-Sauce</li>
+                  <li>Gebratene Mittelmeerfische und Garnelen auf Blattspinat-Tomaten-Gemüse mit Gorgonzolasauce</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Beilagen</h3>
+                <ul>
+                  <li>Rosmarinkartoffeln</li>
+                  <li>Gegrilltes Gemüse</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Desserts</h3>
+                <ul>
+                  <li>Tiramisu mit Amarenakirschen</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_3_Mediterranes_Buffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
+          </div>
+
+          <!-- 4. Orientalisches Buffet -->
+          <div id="buffet-4" class="buffet-panel">
+            <div class="buffet-title-row">
+              <span class="price-badge">Orientalisches Buffet – Preis pro Person ab (Netto): 29,50 €</span>
+            </div>
+            <div class="buffet-content-grid">
+              <div class="buffet-category">
+                <h3>Brotauswahl & Dips</h3>
+                <ul>
+                  <li>Hausgebackene Kräuter-Focaccia</li>
+                  <li>Hummus & Baba Ghanoush</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Vorspeisen & Hauptgänge</h3>
+                <ul>
+                  <li>Fattoush-Salat mit geröstetem Fladenbrot und Zitronen-Sumach-Dressing</li>
+                  <li>Geschmorte Hähnchenkeulen mit Zwiebeln</li>
+                  <li>Geschmortes Lammfleisch in Joghurtsauce</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Beilagen</h3>
+                <ul>
+                  <li>Biryani-Reis</li>
+                  <li>Gebratener Blumenkohl mit Sesamsauce</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Desserts</h3>
+                <ul>
+                  <li>Kunafa mit Käse</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_4_Orientalisches_Buffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
+          </div>
+
+          <!-- 5. Grillbuffet -->
+          <div id="buffet-5" class="buffet-panel">
+            <div class="buffet-title-row">
+              <span class="price-badge">Grillbuffet – Preis pro Person ab: 36,50 € (Netto)</span>
+            </div>
+            <div class="buffet-content-grid">
+              <div class="buffet-category">
+                <h3>Brot & Dips / Vorspeisen</h3>
+                <ul>
+                  <li>Ciabatta und Sauerteigbrot</li>
+                  <li>Chimichurri, BBQ-Sauce und Aufgeschlagene Salzbutter</li>
+                  <li>Grüner Blattsalat mit Balsamico-Dressing</li>
+                  <li>Wassermelonensalat mit Feta, Minze und Rucola</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Vom Grill</h3>
+                <ul>
+                  <li>Rinderhüftsteaks</li>
+                  <li>Zanderfilet vom Grill auf Lauch und Kirschtomaten mit Limettenbutter</li>
+                  <li>Gegrillte Portobello-Pilze mit Knoblauch</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Beilagen</h3>
+                <ul>
+                  <li>Ofenkartoffeln mit geräucherter Paprika und Meersalz</li>
+                  <li>Gegrillte Zucchini und Paprika mit Balsamico</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Desserts</h3>
+                <ul>
+                  <li>Cheesecake im Glas mit Beerensauce</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_5_Grillbuffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
+          </div>
+
+          <!-- 6. Sommerliches Grillbuffet -->
+          <div id="buffet-6" class="buffet-panel">
+            <div class="buffet-title-row">
+              <span class="price-badge">Sommerliches Grillbuffet – Preis pro Person ab: 36,50 € (Netto)</span>
+            </div>
+            <div class="buffet-content-grid">
+              <div class="buffet-category">
+                <h3>Brot & Dips / Salate</h3>
+                <ul>
+                  <li>Ciabatta und Baguette</li>
+                  <li>Rote-Bete-Hummus und Aufgeschlagene Kräuterbutter</li>
+                  <li>Couscous-Salat mit Tomaten, Minze und Petersilie</li>
+                  <li>Bauernsalat mit Gurke, Kirschtomaten, Paprika und Zitronendressing</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Vom Grill</h3>
+                <ul>
+                  <li>Maispoulardenbrust in Zitronen-Kräuter-Marinade</li>
+                  <li>Riesengarnelenspieße mit Knoblauch und Petersilie</li>
+                  <li>Halloumi-Spieße mit Paprika und roten Zwiebeln</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Beilagen</h3>
+                <ul>
+                  <li>Kartoffelsalat mit Basilikumpesto</li>
+                  <li>Gegrillte Maiskolben mit Butter und Meersalz</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Desserts</h3>
+                <ul>
+                  <li>Zitronenquark mit frischen Erdbeeren im Glas</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_6_Sommerliches_Grillbuffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
+          </div>
+
+          <!-- 7. BBQ Premium Buffet -->
+          <div id="buffet-7" class="buffet-panel">
+            <div class="buffet-title-row">
+              <span class="price-badge">BBQ Premium Buffet – Preis pro Person ab: 39,50 € (Netto)</span>
+            </div>
+            <div class="buffet-content-grid">
+              <div class="buffet-category">
+                <h3>Brot & Dips / Salate</h3>
+                <ul>
+                  <li>Knuspriges Baguette und Sauerteigbrot mit Fenchel-Kräuterquark & Tomatenbutter</li>
+                  <li>BBQ-Sauce, Senf und Ketchup</li>
+                  <li>Bohnensalat mit roten Zwiebeln, Petersilie und getrockneten Tomaten</li>
+                  <li>Pastasalat mit Pesto, Mini-Mozzarella und Pinienkernen</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Grillspezialitäten</h3>
+                <ul>
+                  <li>Thüringer Bratwurst</li>
+                  <li>Schweinenackensteaks in Senf-Kräuter-Marinade</li>
+                  <li>Marinierte, ausgelöste Hähnchenkeulen</li>
+                  <li>Lachsfilet mit Zitronenbutter</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Beilagen</h3>
+                <ul>
+                  <li>Kartoffeln mit Rosmarin, Thymian, Meersalz und Olivenöl</li>
+                  <li>Gebratene Champignons mit Knoblauch und Kräutern</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Desserts</h3>
+                <ul>
+                  <li>Schokoladenbrownie mit Salzkaramellsauce</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_7_BBQ_Premium_Buffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
+          </div>
+
+          <!-- 8. EdelNord Genussbuffet -->
+          <div id="buffet-8" class="buffet-panel">
+            <div class="buffet-title-row">
+              <span class="price-badge">EdelNord Genussbuffet – Preis pro Person ab: 39,50 € (Netto)</span>
+            </div>
+            <div class="buffet-content-grid">
+              <div class="buffet-category">
+                <h3>Brot & Vorspeisen</h3>
+                <ul>
+                  <li>Baguette und hausgebackene Kräuter-Focaccia mit Salzbutter & Aioli</li>
+                  <li>Geräuchertes Forellenfilet auf Fenchelsalat mit Zitrone, Dill und Meerrettichcreme</li>
+                  <li>Feldsalat mit Birne, gerösteten Walnüssen und Senf-Dill-Vinaigrette</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Hauptgänge</h3>
+                <ul>
+                  <li>Rosa gebratenes Rinderfilet mit kräftiger Rotweinjus</li>
+                  <li>Ausgelöste Hähnchenkeulen in Zitronen-Thymian-Jus</li>
+                  <li>Süßkartoffel-Spinat-Curry (vegan)</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Beilagen</h3>
+                <ul>
+                  <li>Buntes Landgemüse mit Möhren, grünen Bohnen und Erbsen</li>
+                  <li>Basmatireis</li>
+                </ul>
+              </div>
+              <div class="buffet-category">
+                <h3>Desserts</h3>
+                <ul>
+                  <li>Mousse au Chocolat aus Zartbitterschokolade</li>
+                </ul>
+              </div>
+            </div>
+            <div class="pdf-download-container">
+              <a href="assets/EdelNord_Buffet_8_EdelNord_Genussbuffet.pdf" class="btn-pdf-download" target="_blank">
+                📥 Buffet-PDF herunterladen
+              </a>
+            </div>
+            <div class="mobile-buffet-tabs" aria-label="Buffet auswählen">
+              <button type="button" class="buffet-tab" data-target="buffet-1">Klassisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-2">Norddeutsches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-3">Mediterranes Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-4">Orientalisches Buffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-5">Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-6">Sommerliches Grillbuffet</button>
+              <button type="button" class="buffet-tab" data-target="buffet-7">BBQ Premium Buffet</button>
+              <button type="button" class="buffet-tab active" data-target="buffet-8">EdelNord Genussbuffet</button>
+            </div>
+          </div>
 
         </div>
 
@@ -205,8 +842,65 @@
 
   </section>
 
-  <script src="js/main.js"></script>
-  <script src="js/buffets.js"></script>
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightboxModal">
+    <button class="lightbox-close" id="lightboxClose">&times;</button>
+    <img class="lightbox-content" id="lightboxImg" src="" alt="Großansicht">
+  </div>
 
+  <!-- JavaScript für Tabs und Lightbox -->
+  <script>
+    const tabs = document.querySelectorAll('.buffet-tab');
+    const panels = document.querySelectorAll('.buffet-panel');
+
+    function activateBuffet(targetId, shouldScrollMobile = false) {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+
+      panels.forEach(p => p.classList.remove('active'));
+      target.classList.add('active');
+
+      tabs.forEach(t => {
+        t.classList.toggle('active', t.getAttribute('data-target') === targetId);
+      });
+
+      if (shouldScrollMobile && window.innerWidth <= 900) {
+        const titleRow = target.querySelector('.buffet-title-row');
+        if (titleRow) {
+          titleRow.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
+    }
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        const targetId = tab.getAttribute('data-target');
+        const isMobileTab = Boolean(tab.closest('.mobile-buffet-tabs'));
+        activateBuffet(targetId, isMobileTab);
+      });
+    });
+
+    const modal = document.getElementById('lightboxModal');
+    const modalImg = document.getElementById('lightboxImg');
+    const closeBtn = document.getElementById('lightboxClose');
+    const carouselItems = document.querySelectorAll('.carousel-item img');
+
+    carouselItems.forEach(img => {
+      img.parentElement.addEventListener('click', () => {
+        modal.classList.add('active');
+        modalImg.src = img.src;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      modal.classList.remove('active');
+    });
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('active');
+      }
+    });
+  </script>
 </body>
 </html>
