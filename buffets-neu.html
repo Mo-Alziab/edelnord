@@ -1,3 +1,4 @@
+HTML
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -16,21 +17,21 @@
       background: rgba(20, 20, 20, 0.85);
       border: 1px solid rgba(201, 148, 58, 0.3);
       border-radius: 14px;
-      padding: 1.8rem;
-      margin-bottom: 2rem;
+      padding: 1.4rem 1.8rem;
+      margin-bottom: 1.5rem;
       text-align: center;
     }
     .buffet-intro-box h2 {
       font-family: var(--font-display);
       color: var(--gold-light);
-      font-size: 1.8rem;
+      font-size: 1.7rem;
       margin-top: 0;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.6rem;
     }
     .buffet-intro-box p {
       color: var(--white-dim);
-      font-size: 1rem;
-      line-height: 1.6;
+      font-size: 0.96rem;
+      line-height: 1.55;
       margin: 0;
     }
 
@@ -39,8 +40,9 @@
       position: relative;
       width: 100%;
       overflow: hidden;
-      margin-bottom: 2rem;
-      padding: 0.5rem 0;
+      margin-top: 0.5rem;
+      margin-bottom: 2.6rem;
+      padding: 0.4rem 0;
     }
     .media-carousel-track {
       display: flex;
@@ -52,8 +54,8 @@
       animation-play-state: paused;
     }
     .carousel-item {
-      width: 280px;
-      height: 180px;
+      width: 260px;
+      height: 155px;
       border-radius: 10px;
       overflow: hidden;
       border: 1px solid rgba(201, 148, 58, 0.3);
@@ -114,19 +116,22 @@
       border: none;
     }
 
-    /* Seitenverhältnisse der Sidebar-Buttons optimiert für längere Texte */
+    /* Seitenverhältnisse & Schriftgröße der Sidebar-Buttons optimiert */
     .buffet-tab {
       width: 100%;
-      min-height: 58px;
-      padding: 0.6rem 0.8rem;
-      font-size: 0.88rem;
+      min-height: 54px;
+      padding: 0.5rem 0.65rem;
+      font-size: 0.72rem;
       line-height: 1.25;
+      letter-spacing: 0.03em;
       text-align: center;
       display: flex;
       align-items: center;
       justify-content: center;
       box-sizing: border-box;
-      word-break: break-word;
+      word-break: normal;
+      overflow-wrap: normal;
+      hyphens: none;
     }
 
     /* Buffet Grid & Cards */
@@ -134,7 +139,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.5rem;
-      margin-top: 1.5rem;
+      margin-top: 1.2rem;
       margin-bottom: 2rem;
     }
     .buffet-category {
@@ -180,20 +185,24 @@
       display: block;
       animation: fadeIn 0.4s ease forwards;
     }
+    .buffet-title-row {
+      text-align: center;
+      margin-top: 1.2rem;
+      margin-bottom: 1.4rem;
+    }
     .price-badge {
       display: inline-block;
       background: rgba(201, 148, 58, 0.15);
       border: 1px solid var(--gold);
       color: var(--gold-light);
-      padding: 0.6rem 1.2rem;
+      padding: 0.6rem 1.3rem;
       border-radius: 999px;
       font-weight: 600;
       font-size: 0.95rem;
-      margin-bottom: 1.2rem;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       text-align: center;
     }
-    
+
     /* PDF Download Button Styling */
     .pdf-download-container {
       text-align: center;
@@ -266,7 +275,7 @@
 
 
       <!-- ================= HAUPTBEREICH / SPEISEKARTE ================= -->
-      <main class="menu-section" style="padding: 2rem; overflow-y: auto; max-height: 90vh;">
+      <main class="menu-section" style="padding: 1.6rem 2rem 2rem; overflow-y: auto; max-height: 90vh;">
 
         <!-- Einleitungstext -->
         <div class="buffet-intro-box">
@@ -299,10 +308,10 @@
 
         <!-- Buffet Panels Container -->
         <div class="buffet-panels-wrapper">
-          
+
           <!-- 1. Klassisches Buffet -->
           <div id="buffet-1" class="buffet-panel active">
-            <div style="text-align: center;">
+            <div class="buffet-title-row">
               <span class="price-badge">Klassisches Buffet – Buffet Preis netto pro Person ab: 29,50 €</span>
             </div>
             <div class="buffet-content-grid">
@@ -339,7 +348,7 @@
 
           <!-- 2. Norddeutsches Buffet -->
           <div id="buffet-2" class="buffet-panel">
-            <div style="text-align: center;">
+            <div class="buffet-title-row">
               <span class="price-badge">Norddeutsches Buffet – Buffet Preis netto pro Person ab: 33,50 €</span>
             </div>
             <div class="buffet-content-grid">
@@ -376,7 +385,7 @@
 
           <!-- 3. Mediterranes Buffet -->
           <div id="buffet-3" class="buffet-panel">
-            <div style="text-align: center;">
+            <div class="buffet-title-row">
               <span class="price-badge">Mediterranes Buffet – Buffet Preis netto pro Person ab: 33,50 €</span>
             </div>
             <div class="buffet-content-grid">
@@ -414,7 +423,7 @@
 
           <!-- 4. Orientalisches Buffet -->
           <div id="buffet-4" class="buffet-panel">
-            <div style="text-align: center;">
+            <div class="buffet-title-row">
               <span class="price-badge">Orientalisches Buffet – Buffet Preis netto pro Person ab: 29,50 €</span>
             </div>
             <div class="buffet-content-grid">
@@ -451,7 +460,7 @@
 
           <!-- 5. Grillbuffet -->
           <div id="buffet-5" class="buffet-panel">
-            <div style="text-align: center;">
+            <div class="buffet-title-row">
               <span class="price-badge">Grillbuffet – Buffet Preis netto pro Person ab: 36,50 €</span>
             </div>
             <div class="buffet-content-grid">
@@ -490,7 +499,7 @@
 
           <!-- 6. Sommerliches Grillbuffet -->
           <div id="buffet-6" class="buffet-panel">
-            <div style="text-align: center;">
+            <div class="buffet-title-row">
               <span class="price-badge">Sommerliches Grillbuffet – Buffet Preis netto pro Person ab: 36,50 €</span>
             </div>
             <div class="buffet-content-grid">
@@ -529,7 +538,7 @@
 
           <!-- 7. BBQ Premium Buffet -->
           <div id="buffet-7" class="buffet-panel">
-            <div style="text-align: center;">
+            <div class="buffet-title-row">
               <span class="price-badge">BBQ Premium Buffet – Buffet Preis netto pro Person ab: 39,50 €</span>
             </div>
             <div class="buffet-content-grid">
@@ -569,7 +578,7 @@
 
           <!-- 8. EdelNord Genussbuffet -->
           <div id="buffet-8" class="buffet-panel">
-            <div style="text-align: center;">
+            <div class="buffet-title-row">
               <span class="price-badge">EdelNord Genussbuffet – Buffet Preis netto pro Person ab: 39,50 €</span>
             </div>
             <div class="buffet-content-grid">
