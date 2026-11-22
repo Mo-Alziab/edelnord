@@ -162,19 +162,24 @@
       hyphens: none;
     }
 
-    /* Buffet Grid & Cards */
-    .buffet-content-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.2rem;
-      margin-bottom: 2rem;
+    /* Buffet Grid & eigene Kästchen für Beilagen und Desserts */
+    .menu-section .buffet-content-grid {
+      display: grid !important;
+      grid-template-columns: repeat(2, minmax(260px, 1fr)) !important;
+      gap: 1.5rem !important;
+      margin-top: 1.2rem !important;
+      margin-bottom: 2rem !important;
+      align-items: stretch !important;
     }
-    .buffet-category {
-      background: rgba(20, 20, 20, 0.7);
-      border: 1px solid rgba(201, 148, 58, 0.2);
-      border-radius: 14px;
-      padding: 1.5rem;
+    .menu-section .buffet-category {
+      display: flex !important;
+      flex-direction: column !important;
+      background: rgba(20, 20, 20, 0.7) !important;
+      border: 1px solid rgba(201, 148, 58, 0.2) !important;
+      border-radius: 14px !important;
+      padding: 1.5rem !important;
+      min-width: 0 !important;
+      box-sizing: border-box !important;
     }
     .buffet-category h3 {
       font-family: var(--font-display);
@@ -210,20 +215,27 @@
       display: none;
     }
     .buffet-panel.active {
-      display: block;
+      display: block !important;
       animation: fadeIn 0.4s ease forwards;
     }
-    .buffet-title-row {
-      text-align: center;
-      margin-top: 2.8rem;
-      margin-bottom: 1.4rem;
+
+    /* Preis pro Person auf Desktop & Mobil zuverlässig sichtbar */
+    .menu-section .buffet-title-row {
+      display: block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
+      text-align: center !important;
+      margin-top: 2.2rem !important;
+      margin-bottom: 1.4rem !important;
     }
-    .price-badge {
-      display: inline-block;
+    .menu-section .price-badge {
+      display: inline-block !important;
+      visibility: visible !important;
+      opacity: 1 !important;
       background: rgba(201, 148, 58, 0.15);
       border: 1px solid var(--gold);
       color: var(--gold-light);
-      padding: 0.6rem 1.3rem;
+      padding: 0.65rem 1.4rem;
       border-radius: 999px;
       font-weight: 600;
       font-size: 0.95rem;
@@ -275,6 +287,10 @@
         padding: 0.5rem 0.25rem !important;
       }
 
+      .menu-section .buffet-content-grid {
+        grid-template-columns: 1fr !important;
+      }
+
       .menu-section .media-carousel-container {
         min-height: 150px !important;
         margin-top: 0.8rem !important;
@@ -292,12 +308,12 @@
         width: 210px !important;
       }
 
-      .buffet-title-row {
-        margin-top: 1.4rem;
-        margin-bottom: 1rem;
+      .menu-section .buffet-title-row {
+        margin-top: 1.4rem !important;
+        margin-bottom: 1rem !important;
       }
 
-      .price-badge {
+      .menu-section .price-badge {
         font-size: 0.85rem;
         padding: 0.55rem 1rem;
       }
@@ -886,6 +902,5 @@
       }
     });
   </script>
-
 </body>
 </html>
